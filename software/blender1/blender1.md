@@ -57,3 +57,7 @@ It is a tree of object currently in the scene you are working in.
 
 Many properties can be accessed. Just look at all of the tabs at the top.		
 
+### Modifiers
+![](blenduimod.png "Fig. 9 Modifiers are my favorite part of properties")
+
+
