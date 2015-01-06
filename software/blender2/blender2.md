@@ -74,7 +74,13 @@ Tab to object mode and parent the Bones to the Body and hit Ctrl-P and Select Bo
 
 ![](objecttoparent.PNG "Fig. 19 Parenting the Body to the Armature")
 
+Enter the Pose Mode and position the camera for Animation
 
+![](poseanimate.PNG "Fig. 20 Ready for Animation/Posing the Armature")
+
+Pose the Humanoid in a resting position and turn on Automatic Keyframe Insertion (Red Record Button)
+
+![](poseautokeyframe.PNG "Fig. 21 Posed Humanoid")
 
 
 
