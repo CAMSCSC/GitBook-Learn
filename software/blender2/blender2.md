@@ -114,7 +114,7 @@ Adjust the camera so the humanoid is inside the box (Use 0 to select the camera)
 
 The render result will pop up, switch to 3D view.
 
-![](3dview.PNG "Fig. 29 3D View")
+![](3dview.PNG "Fig. 30 3D View")
 
 
 
