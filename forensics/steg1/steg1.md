@@ -107,30 +107,23 @@ The least significant bit (LSB) is the most important when it comes to steganogr
 >>> int('0b11111111', 2) - int('0b01111111', 2)
 128 #Difference from changing the MSB
 ```
+|Original|LSB|MSB|
+|------||------|-------|
+| ![](original.png "Figure 3: Original") | ![](lsb_s.png "Figure 3: LSB") | ![](msb_s.png "Figure 3: MSB") |
 
-<figure>
-<img src="original.png"/>
-<img src="lsb_s.png"/>
-<img src="msb_s.png"/>
-<figcaption>Figure 3: Original vs LSB vs MSB</figcaption>
-</figure>
+The Python up there shows that changing the LSB will only modify a pixel's R, G, or B value by 1 while an MSB change will modify it by over 100. If mathematics didn't do it, I'm sure the visual did. When we want to hide data, all we need to is convert it into binary and replace the LSB of each R, G, B, (or A) with a bit of the data. We will discuss this more later. Notice that if steganography used MSB or something that's not LSB, the difference will be much more noticeable. The message hidden was: 'Do you notice the difference? Yeah. I think you notice the difference now. Why? Because I told you that LSB is the least significant and will not cause a lot of change to the image.
 
-<figure>
-![](original.png "Figure 3: Original")
-![](lsb_s.png "Figure 3: LSB")
-![](msb_s.png "Figure 3: MSB")
-</figure>
-
-
-The Python up there shows that changing the LSB will only modify a pixel's R, G, or B value by 1 while an MSB change will modify it by over 100. If mathematics didn't do it, I'm sure the visual did. When we want to hide data, all we need to is convert it into binary and replace the LSB of each R, G, B, (or A) with a bit of the data. We will discuss this more later. Notice that if steganography used MSB or something that's not LSB, the difference will be much more noticeable. The message hidden was: 'Do you notice the difference? Yeah. I think you notice the difference now. Why? Because I told you that LSB is the least significant and will not cause a lot of change to the image.'
-Not Unlimited
+### Not Unlimited
 
 Remember when I said that color depth is pertinent to steganography? I am about to explain why. Before you hide data in something, you'll probably want to make sure that it can actually store everything and not run out of storage space :p. This is where color depth comes in. Each pixel in an 8-bit image contains 8 bits (if you haven't figured that out yet). Each 8 bits or byte can store one bit of information using LSB. That means a 24-bit JPG has the capacity to store 3 bits of information per pixel. The maximum storage capacity of a carrier can be defined as:
-capacity=width×height×bitdepth8
-Putting It Together
+
+$$capacity = width \times height \times \dfrac{bitdepth}{8} $$
+
+### Putting It Together
 
 We can put all that we've learned into play to actually perform steganography. There are many steganography tools available. Some of those tools do not utilize LSB to hide information. No, they don't use MSB. They use other more complex algorithms. We will take a look at the text steganography portion of a Python stegnography module called Stéganô. I've rewritten and combined important parts of the code so I can explain how the they work. Let's look at how we can hide information in images. The code below comes from the file hide.py (a better custom version that fixes a bug is available for download in a later section).
 
+```python
 from PIL import Image
 
 def setlsb(component, bit):
@@ -173,25 +166,34 @@ def hide(input_image_file, message):
 if __name__ == "__main__":
 	steg = hide('carrier.png', 'The secret message.')
 	steg.save('output.png')
+```
 
 We can begin analyzing this script line by line.
-Python: Importing PIL
 
+### Python: Importing PIL
+
+```python
 from PIL import Image
+```
 
 First we need to import Image from the PIL library. If you don't have it yet, you can get it by running the following in CMD or terminal:
 
+```
 pip3 install pillow
+```
 
-Setting the LSB
+### Setting the LSB
 
+```python
 def setlsb(component, bit):
 	return component & ~1 | int(bit)
+```
 
-The function takes in an R, G, or B value as component and the bit to be hidden as bit. The function uses a smart bitwise method to alter the LSB of the component and return it as an integer value. Let's look at how it works. If you forgot bitwise operations, please review that concept.
+The function takes in an R, G, or B value as **component** and the bit to be hidden as **bit**. The function uses a smart bitwise method to alter the LSB of the component and return it as an integer value. Let's look at how it works. If you forgot bitwise operations, please review that concept.
 
 Component is 201 and the bit we are trying to hide is 1.
 
+```python
 >>> component = int(201) #Set component value to 201
 >>> bin(component) #Binary of component
 '0b11001001'
@@ -209,72 +211,89 @@ Converting to Binary
 
 def a2bits_list(chars):
 	return [bin(ord(x))[2:].rjust(8, '0') for x in chars]
+```
 
 The function takes the ASCII value of each character, converts it into an 8 bit binary, and appends it to the list. The return operation is simplified to a one line list comprehension. The function can be rewritten as the following.
 
+```python
 def a2bits_list(chars):
 	list = [] #Create an empty list
 	for x in chars: #Cycle through all characters
 		data = bin(ord(x))[2:].rjust(8, '0') #Convert each character to binary, strip the '0b', and fill it up to 8 bits with empty 0s in the front
 		list.append(data) #Add the data to the list
 	return list #Return the list
+```
 
-Hiding the Data
+### Hiding the Data
 
+```python
 def hide(input_image_file, message):
+```
 
 Line 9: Accepts the input image file name and the message to hide.
 
-	img = Image.open(input_image_file)
-	encoded = img.copy()
-	width, height = img.size
-	index = 0
+```python
+img = Image.open(input_image_file)
+encoded = img.copy()
+width, height = img.size
+index = 0
+```
 
 Lines 11-14: Open the image and create a copy for output. Get the image size. Set pixel index to 0 (we need to know where we are in the image to know what index of the message binary to hide in the LSB.
 
-	message = str(len(message)) + ":" + message
-	message_bits = "".join(a2bits_list(message))
+```python
+message = str(len(message)) + ":" + message
+message_bits = "".join(a2bits_list(message))
+```
 
 Lines 16-17: Get the length of the message and add it to the beginning of the message. This is done so that for non-text files, the revealer knows when to stop.
 
-	npixels = width * height
-	if len(message_bits) > npixels * 3:
-		raise Exception("""The message you want to hide is too long (%s > %s).""" % (len(message_bits), npixels * 3))
+```python
+npixels = width * height
+if len(message_bits) > npixels * 3:
+	raise Exception("""The message you want to hide is too long (%s > %s).""" % (len(message_bits), npixels * 3))
+```
 
 Lines 19-21: Checks if the max length of the message exceeds the capacity of the carrier.
 
-	for row in range(height):
-		for col in range(width):
+```python
+for row in range(height):
+	for col in range(width):
 
-			if index + 3 <= len(message_bits) :
+		if index + 3 <= len(message_bits) :
 
-				(r, g, b) = img.getpixel((col, row))
+			(r, g, b) = img.getpixel((col, row))
 
-				r = setlsb(r, message_bits[index])
-				g = setlsb(g, message_bits[index+1])
-				b = setlsb(b, message_bits[index+2])
+			r = setlsb(r, message_bits[index])
+			g = setlsb(g, message_bits[index+1])
+			b = setlsb(b, message_bits[index+2])
 
-				encoded.putpixel((col, row), (r, g , b))
+			encoded.putpixel((col, row), (r, g , b))
 
-			index += 3
+		index += 3
 
-	return encoded
+return encoded
+```
 
 Lines 23-38: For every pixel (it goes range(height) and then range(width) because we want to encode left-right. Think about it.), if the message has not been completely encoded, get the R, G, and B value of the pixel at the location (col, row). Set the LSB values of each R, G, and B to a bit in the message. Put the new pixel values in our encoded file (a copy of the original image). Add 3 to the index counter because we process 3 bits. Notice a problem here. It only goes by sets of 3s, which can cause incomplete data to be encoded. A fix will be shown later. Finally, return the encoded image.
 
+```python
 if __name__ == "__main__":
 	steg = hide('carrier.png', 'The secret message.')
 	steg.save('output.png')
+```
 
 Lines 40-42: If the file is not being imported, use the carrier 'carrier.png', hide the message 'The secret message.', and save the output to 'output.png'.
-Bug Fix
+
+### Bug Fix
 
 The aforementioned issue of "sets of 3s" incomplete data hiding results when one bit of the message is left out at the end. This results from the set of three check. A fixed version is available for download - hide_fix.py. Figure out what has been fixed and why the fix works.
 
-Retrieving the Data
+### Retrieving the Data
 
 Now that we have hidden the data, we want a way to get it back. Stéganô also includes a function to do that. I have simplified the source into reveal.py. The reveal function works by working on the image in 8 bit (1 byte) chunks. Therefore, it can recover the hidden messages from images of different color depths and transparency options.
 
+```python
 from PIL import Image
 
 def reveal(input_image_file):
@@ -304,11 +323,13 @@ def reveal(input_image_file):
 
 if __name__ == "__main__":
 	print(reveal('output.png'))
+```
 
-Hiding in the Alpha Channel
+### Hiding in the Alpha Channel
 
 32-bit PNGs also have an 8 bit alpha channel that can be used to hide information. Below is a modified program that hides additional data in the alpha channel. reveal.py can still extract the data without modification. The code below is from rgba_steg.py.
 
+```python
 from PIL import Image
 
 def setlsb(component, bit):
@@ -359,21 +380,29 @@ def hide(input_image_file, message):
 if __name__ == "__main__":
 	steg = hide('carrier.png', 'Hidden message.')
 	steg.save('output.png')
+```
 
 Now, why don't you try to extract the hidden message from the second image of the CAMS CSC logo at the top of the page?
-Hiding Elsewhere
+
+### Hiding Elsewhere
 
 Is the only type of image steganography LSB? No. There are many other types of image steganography as well. Let's see a few.
-EOF Steganography
+
+### EOF Steganography
 
 We can hide data after the footer of some image formats. JPG images read only from header to footer. Thus, we can safely put any data we want after the footer without disrupting the image at all. However, this method is easily detectable when viewing the contents of the file in a text editor or hex editor.
-Figure 4: Original JPG vs JPG with EOF steganography
+
+|Original|With EOF Steg|
+|---|---|
+|![](eof.jpg "Figure 4: Original JPG")|![](eof_s.jpg "Figure 4: JPG with EOF steganography")|
 
 Let's look at how easy it is to detect EOF Steganography.
-Figure 5: EOF steganography viewed using HxD
+
+![](blatanteof.png "Figure 5: EOF steganography viewed using HxD")
 
 More steganography carriers, algorithms, and methods will be discussed in another lesson.
-Further Readings and References
+
+### Further Readings and References
 
 "Steganography: Hiding Data Within Data" - http://www.garykessler.net/library/steganography.html
 
@@ -382,10 +411,3 @@ Tool: Stéganô - https://bitbucket.org/cedricbonhomme/stegano
 Tool: LSB-Steganography - https://github.com/RobinDavid/LSB-Steganography
 
 Tool: HxD - http://mh-nexus.de/en/hxd/
-
-Home
-
-Menu
-
-Creative Commons License
-Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International License.
