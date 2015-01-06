@@ -107,9 +107,9 @@ The least significant bit (LSB) is the most important when it comes to steganogr
 >>> int('0b11111111', 2) - int('0b01111111', 2)
 128 #Difference from changing the MSB
 ```
-| Original | LSB |
-|:------:||:------:|
-|![](original.png "Figure 3: Original")|![](lsb_s.png "Figure 3: LSB")|
+|Original|LSB|MSB|
+|:----:||:-----:|:-----:|
+|![](original.png "Figure 3: Original")|![](lsb_s.png "Figure 3: LSB")|![](msb_s.png "Figure 3: MSB")|
 
 The Python up there shows that changing the LSB will only modify a pixel's R, G, or B value by 1 while an MSB change will modify it by over 100. If mathematics didn't do it, I'm sure the visual did. When we want to hide data, all we need to is convert it into binary and replace the LSB of each R, G, B, (or A) with a bit of the data. We will discuss this more later. Notice that if steganography used MSB or something that's not LSB, the difference will be much more noticeable. The message hidden was: 'Do you notice the difference? Yeah. I think you notice the difference now. Why? Because I told you that LSB is the least significant and will not cause a lot of change to the image.
 
