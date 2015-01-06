@@ -129,7 +129,13 @@ Select Unwrap
 
 ![](unwrap.PNG "Fig. 33 Unwrapping the UV")
 
+Save the UV to a new image
 
+![](saveuv.PNG "Fig. 34 Saving the UV to a new image")
+
+Finally, save the image/texture using F3
+
+![](saveimageandtexture.PNG "Fig. 35 Export UV image")
 
 
 
