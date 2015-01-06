@@ -117,6 +117,6 @@ The render result will pop up, switch to 3D view.
 ![](3dview.PNG "Fig. 30 3D View")
 
 ## UV Wrapping
-
+###### UV Wrapping is a method of creating a map of the model and texturing it.
 
 
