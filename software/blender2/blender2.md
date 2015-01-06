@@ -54,3 +54,4 @@ Press Tab and apply the modifiers
 
 ![](ApplyObjectMode.PNG "Fig. 14 The Completed Humanoid")
 
+## Animation
