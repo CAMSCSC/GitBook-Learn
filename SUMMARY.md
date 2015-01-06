@@ -9,7 +9,7 @@
    * [Steganography 1](forensics/steg1/steg1.md)
 * Hardware
 * Software
-   * Blender 1
+   * [Blender 1](software/blender1/blender1.md)
+   * [Blender 2](software/blender2/blender2.md)
 * Binary
-   * Binary 1
 
