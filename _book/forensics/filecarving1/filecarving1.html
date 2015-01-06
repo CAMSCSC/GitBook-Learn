@@ -4,20 +4,22 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Introduction | Introduction</title>
+        <title>File Carving 1 | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Needs to be updated.">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
         
     
     
     
+    
+    <link rel="prev" href="..\../forensics/steg1/steg1.html" />
     
 
         
@@ -25,11 +27,11 @@
     <body>
         
         
-<link rel="stylesheet" href="gitbook/style.css">
+<link rel="stylesheet" href="../../gitbook/style.css">
 
 
         
-    <div class="book"  data-level="0" data-basepath="." data-revision="1420584700982">
+    <div class="book"  data-level="3.2" data-basepath="..\.." data-revision="1420584700982">
     
 
 <div class="book-summary">
@@ -47,10 +49,10 @@
         
     
         
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
-                    <a href="./index.html">
+                    <a href="..\../index.html">
                         <i class="fa fa-check"></i>
                         
                          Introduction
@@ -73,7 +75,7 @@
         <li class="chapter " data-level="1.1" data-path="home/constitution/constitution.html">
             
                 
-                    <a href="./home/constitution/constitution.html">
+                    <a href="..\../home/constitution/constitution.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.1.</b>
@@ -103,7 +105,7 @@
         <li class="chapter " data-level="2.1" data-path="web/sql1/sql1.html">
             
                 
-                    <a href="./web/sql1/sql1.html">
+                    <a href="..\../web/sql1/sql1.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.</b>
@@ -119,7 +121,7 @@
         <li class="chapter " data-level="2.2" data-path="web/sql2/sql2.html">
             
                 
-                    <a href="./web/sql2/sql2.html">
+                    <a href="..\../web/sql2/sql2.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
@@ -149,7 +151,7 @@
         <li class="chapter " data-level="3.1" data-path="forensics/steg1/steg1.html">
             
                 
-                    <a href="./forensics/steg1/steg1.html">
+                    <a href="..\../forensics/steg1/steg1.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
@@ -162,10 +164,10 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="forensics/filecarving1/filecarving1.html">
+        <li class="chapter active" data-level="3.2" data-path="forensics/filecarving1/filecarving1.html">
             
                 
-                    <a href="./forensics/filecarving1/filecarving1.html">
+                    <a href="..\../forensics/filecarving1/filecarving1.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.</b>
@@ -203,7 +205,7 @@
         <li class="chapter " data-level="5.1" data-path="software/blender1/blender1.html">
             
                 
-                    <a href="./software/blender1/blender1.html">
+                    <a href="..\../software/blender1/blender1.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.1.</b>
@@ -219,7 +221,7 @@
         <li class="chapter " data-level="5.2" data-path="software/blender2/blender2.html">
             
                 
-                    <a href="./software/blender2/blender2.html">
+                    <a href="..\../software/blender2/blender2.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -325,7 +327,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >Introduction</a>
+        <a href="..\../" >Introduction</a>
     </h1>
 </div>
 
@@ -333,10 +335,41 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_254">
+                    <section class="normal" id="section-gitbook_255">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>Needs to be updated.</p>
+                        <h1 id="file-carving-1">File Carving 1</h1>
+<h3 id="intro-to-file-carving">Intro to File Carving</h3>
+<p>File carving is the process of searching for files on the basis of binary content rather than metadata. You should read the lesson on File Structures before continuing. As we know, file are composed of binary data. The only way a computer knows where each file is and how big a file is is through the use of metadata. Metadata, like those stored by the Windows Master File Table (MFT) tells exactly where a file is, how large a file is, when the file was last modified, and other related information. File carving is necessary when metadata is not available to the investigator or that the metadata is corrupt</p>
+<h3 id="the-three-methods-of-carving">The Three Methods of Carving</h3>
+<p>There are three main ways that file carvers operate.</p>
+<h4 id="1-header---trailer-or-header---size-search">1. Header -&gt; Trailer or Header -&gt; Size search.</h4>
+<p>A common way to crave files is to search for headers and carve to the trailers. This is present in JPGs and other file formats with identifiable headers and trailers.</p>
+<p><img src="header.png" alt="" title="Figure 1: JPG header">
+<img src="footer.png" alt="" title="Figure 1: JPG trailer"></p>
+<p>A file carver will simply scan for the hex signature FF D8 FF (E0) and then carve to FF D9. In the example below, the file carver will only scan from the header of the PNG to the EOF. It will ignore any data following the EOF.</p>
+<p><img src="pnghead.png" alt="" title="Figure 2: PNG header">
+<img src="pngfoot.png" alt="" title="Figure 2: PNG EOF"></p>
+<p>However, some files don&#39;t have set trailers. In the case of BMPs (which have headers and no trailers), a file carver may simply choose to estimate a maximum file size or to complete a check to see if an image is completely carved based on size information.</p>
+<h4 id="2-structure-based-carving">2. Structure based carving.</h4>
+<p>This method is more applicable to files that do not have a trailer. File carvers will often read the header and attempt to use information following the header to determine how large a file is or when to stop carving.</p>
+<h4 id="3-content-based-carving">3. Content based carving.</h4>
+<p>This is one of the more advanced methods of carving employed by file carvers. This will use content structure like html tags, language recognition, chi-squared analysis, and information entropy to determine the start and end of a file.
+Using File Carvers</p>
+<p>There are many file carvers available for use. Some of them are made specifically for images. The two carvers that have proved to be especially useful are Scalpel and Foremost. They are very easy to install on Linux but require compiling on Windows. Being a nice person, I compiled them for you and even included a larger and more comprehensive signature list. You can download them here - <a href="carvers.7z">carvers.7z</a>.</p>
+<p>Using file carvers is very easy. The common commands are shown below. Also, you can run cmd.bat in the respective folders to spawn CMD in the current directory.</p>
+<pre><code>Scalpel Help:
+    scalpel -h
+Scalpel Basic Carve:
+    scalpel -i input.image
+
+Foremost Help:
+    foremost -h
+Foremost Basic Carve:
+    foremost -t all -i input.image
+</code></pre><h3 id="further-readings-and-references">Further Readings and References</h3>
+<p>&quot;File Carving&quot; - <a href="http://www.forensicswiki.org/wiki/File_Carving" target="_blank">http://www.forensicswiki.org/wiki/File_Carving</a></p>
+<p>Tool: Scalpel 2.0 - <a href="https://github.com/machn1k/Scalpel-2.0" target="_blank">https://github.com/machn1k/Scalpel-2.0</a></p>
+<p>Tool: Foremost - <a href="http://foremost.sourceforge.net/" target="_blank">http://foremost.sourceforge.net/</a></p>
 
                     
                     </section>
@@ -347,19 +380,21 @@
         </div>
 
         
+        <a href="..\../forensics/steg1/steg1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Steganography 1"><i class="fa fa-angle-left"></i></a>
+        
         
     </div>
 </div>
 
         
-<script src="gitbook/app.js"></script>
+<script src="../../gitbook/app.js"></script>
 
     
     <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     
-    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     
 
 <script>
