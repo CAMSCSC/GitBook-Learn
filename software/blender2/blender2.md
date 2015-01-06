@@ -1,4 +1,4 @@
-<h1>Blender 2</h1>
+#Blender 2
 ## Creating a Humanoid
 ![](start.PNG "Fig. 1 The Start Screen")
 
