@@ -52,5 +52,8 @@ To make animations in Blender is a simple task because of the automatic keyframe
 
 It is a tree of object currently in the scene you are working in.
 
+### Properties
+![](blenduiprop.png "Fig. 8 Properties gives a view of all of the properties of an object")
 
-		
+Many properties can be accessed. Just look at all of the tabs at the top.		
+
