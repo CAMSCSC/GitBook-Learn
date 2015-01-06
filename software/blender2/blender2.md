@@ -92,7 +92,7 @@ Go 10 seconds into the timeline and start posing the animation. In this example,
 
 Go back to the initial Base Keyframe and select copy in the left Pose Tools Menu, go 10 seconds past your latest keyframe and paste the Base Keyframe.
 
-
+![](copypaste.PNG "Fig. 24 The frame gets reused and allows for proper looping")
 
 
 
