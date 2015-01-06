@@ -93,3 +93,9 @@ while( $row = mysqli_fetch_assoc( $result ) )
 }
 ?>
 ```
+
+### Further Readings and References
+
+"Back to Basics: Writing SQL Queries" - http://robots.thoughtbot.com/back-to-basics-sql
+
+"SQL Injection" - http://www.w3schools.com/sql/sql_injection.asp
