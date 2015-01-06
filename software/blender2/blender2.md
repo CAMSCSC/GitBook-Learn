@@ -94,9 +94,11 @@ Go back to the initial Base Keyframe and select copy in the left Pose Tools Menu
 
 ![](copypaste.PNG "Fig. 24 The frame gets reused and allows for proper looping")
 
+Go 10 seconds into the timeline and create a similar animation with the other leg
 
+![](anim3.PNG "Fig. 25 A second leg movement")
 
-
+Paste the frame 10 seconds after and crop the animation to 40 frames long.
 
 
 
