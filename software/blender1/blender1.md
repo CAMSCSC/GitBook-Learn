@@ -45,4 +45,12 @@
 ### Animation Timeline
 ![](blenduianim.png "Fig. 6 The Animation Timeline is used to add frames of animations")
 
+To make animations in Blender is a simple task because of the automatic keyframe insertion feature which will calculate motions for you with only a few simple frames.
+
+### The Outline
+![](blenduioutline.png "Fig. 7 The outline gives you a hierarchical view of the scene")
+
+It is a tree of object currently in the scene you are working in.
+
+
 		
