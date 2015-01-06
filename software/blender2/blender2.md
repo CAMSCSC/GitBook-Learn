@@ -154,4 +154,3 @@ the photo as a material and enter the Cycles Render to select the nodes. You wil
 
 
 
-
