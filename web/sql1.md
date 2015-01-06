@@ -61,7 +61,7 @@ The fun part begins here. You can execute queries on an SQL server, but it would
 
 We already looked at basic queries. Now let's look at how those queries are used with PHP.
 
-```
+```php
 <?php
 
 //Create a new database
