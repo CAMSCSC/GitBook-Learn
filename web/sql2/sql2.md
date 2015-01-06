@@ -14,13 +14,13 @@ New Lesson, New Table
 
 The last lesson's table is not realistic enough for the purpose of this lesson. I mean, who would actually make a table like that (aside from me)? Let's create a new database called tutorial_2 and a table named userinfo. The data below shows the structure of the table.
 
-ID    Username      Password         Email
---    ----------    -------------    ---------------------- 
-1     kbarr96       iamzbarr         kbarr@gmail.com
-2     bobbyluig     123456           bobbyluig@hotmail.com
-3     mark17        F341CK29fjqq     markdark17@aol.com
-4     andies98      andies98         adny89@yahoo.com
-5     nobias123     120997           ihavenobias@ymail.com
+ID |  Username    |  Password       |  Email
+---| -----------  |  -------------  |  ---------------------- 
+1  |   kbarr96    |   iamzbarr      |   kbarr@gmail.com
+2  |   bobbyluig  |   123456        |   bobbyluig@hotmail.com
+3  |   mark17     |   F341CK29fjqq  |   markdark17@aol.com
+4  |   andies98   |   andies98      |   adny89@yahoo.com
+5  |   nobias123  |   120997        |   ihavenobias@ymail.com
 
 What is wrong with this table?
 
