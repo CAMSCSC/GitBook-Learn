@@ -86,7 +86,7 @@ Insert a keyframe at frame 0. Keyframes: Insert -> Whole Character
 
 ![](InsertKeyFrame.PNG "Fig. 22 Base Keyframe inserted")
 
-Go 10 seconds into the timeline and start posing the animation. In this example, the left knee will lift and then the right will lift.
+Go 10 seconds into the timeline and start posing the animation. In this example, the left knee will lift and then the right will lift. Insert a Whole Character Keyframe.
 
 ![](anim2.PNG "Fig. 23 Posing the Leg")
 
