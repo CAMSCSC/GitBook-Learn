@@ -121,11 +121,13 @@ The render result will pop up, switch to 3D view.
 
 ![](uveditmode.PNG "Fig. 31 Entering UV Edit Mode")
 
-Press 'A' to select All or you can carefully mark a seam
+Press 'A' to select All or you can carefully select a smart path to unwrap. Then Mark Seam
 
 ![](markseam.PNG "Fig. 32 Selecting everything is poor choice for unwrapping a UV")
 
-Mark the seam
+Select Unwrap
+
+![](unwrap.PNG "Fig. 33 Unwrapping the UV")
 
 
 
