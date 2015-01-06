@@ -109,6 +109,13 @@ The least significant bit (LSB) is the most important when it comes to steganogr
 ```
 
 <figure>
+<img src="original.png"/>
+<img src="lsb_s.png"/>
+<img src="msb_s.png"/>
+<figcaption>Figure 3: Original vs LSB vs MSB</figcaption>
+</figure>
+
+<figure>
 ![](original.png "Figure 3: Original")
 ![](lsb_s.png "Figure 3: LSB")
 ![](msb_s.png "Figure 3: MSB")
