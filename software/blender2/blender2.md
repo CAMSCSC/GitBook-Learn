@@ -82,7 +82,9 @@ Pose the Humanoid in a resting position and turn on Automatic Keyframe Insertion
 
 ![](poseautokeyframe.PNG "Fig. 21 Posed Humanoid")
 
+Insert a keyframe at frame 0. Keyframes: Insert -> Whole Character
 
+![](InsertKeyFrame.PNG "Fig. 22 Base Keyframe inserted")
 
 
 
