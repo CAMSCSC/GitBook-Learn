@@ -55,3 +55,49 @@ Press Tab and apply the modifiers
 ![](ApplyObjectMode.PNG "Fig. 14 The Completed Humanoid")
 
 ## Animation
+
+![](xray.PNG "Fig. 15 X-Rayed Humanoid")
+
+Use Z to X-Ray the Model, then use Shift-A to add "Armature -> Single Bone"
+
+![](Armature.PNG "Fig. 16 Adding an Armature")
+
+Press Tab to edit the armature
+
+![](editarmature.PNG "Fig. 17 A Single Bone in Edit Mode")
+
+Select the top and extrude another bone. Continue with the entire body and approximate bones
+
+![](createrough.PNG "Fig. 18 A rough mock-up of bones in the a humanoid")
+
+Tab to object mode and parent the Bones to the Body and hit Ctrl-P and Select Bones -> Automatic Weights
+
+![](objecttoparent.PNG "Fig. 19")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
