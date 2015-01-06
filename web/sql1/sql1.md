@@ -31,13 +31,13 @@ As you can see, the table contains three columns and five rows. I explicitly sta
 
 Queries allow users to tell the DBMS what the desired data is. The DBMS will plan and optimize the search operations, which makes this extremely easy for the users. Note: most queries take under a few milliseconds. The most common and crucial (might be debatable?) statement in SQL is **SELECT**. Examples and general formatting is shown below. Quotes are there for clarification purposes. Database and column names do no need single quotes around them (unless you want case sensitivity). However, text values, especially those after WHERE optional clause do require single quotes.
 
-```
+```sql
 SELECT 'column_name(s)' FROM 'table(s)' WHERE 'criterion'
 ```
 
 Below are some sample queries.
 
-```
+```sql
 --Get all columns from the table.
 SELECT * FROM secrets
 
@@ -91,5 +91,5 @@ while( $row = mysqli_fetch_assoc( $result ) )
 {
 	echo( "Secrets: " . $row['Secret'] );
 }
-```
 ?>
+```
