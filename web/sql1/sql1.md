@@ -19,13 +19,13 @@ A server contains databases. Each database contains tables. Each table contains 
 
 
 
-|ID  |  Name      |  Secret  |
-|--  |  --------  |  ------  |
-|1   |  Karina    |  uBarr   |
-|2   |  Bob       |  chicken |
-|3   |  Mark      |  600     |
-|4   |  Andy      |  windows |
-|5   |  Nicolas   |  sqlsql  |
+ID  |  Name      |  Secret  
+--  |  --------  |  ------  
+1   |  Karina    |  uBarr   
+2   |  Bob       |  chicken 
+3   |  Mark      |  600     
+4   |  Andy      |  windows 
+5   |  Nicolas   |  sqlsql  
 
 As you can see, the table contains three columns and five rows. I explicitly stated this so you do not get confused when I refer to columns or rows later on.
 
