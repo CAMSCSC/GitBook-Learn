@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* [Constitution](constitution.md)
+* [Constitution](home/constitution.md)
 
