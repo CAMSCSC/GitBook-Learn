@@ -121,4 +121,6 @@ The render result will pop up, switch to 3D view.
 
 ![](uveditmode.PNG "Fig. 31 Entering UV Edit Mode")
 
+Press 'A' to select All or you can carefully mark a seam
 
+![]*markseam.PNG "")
