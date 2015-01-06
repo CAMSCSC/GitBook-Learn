@@ -102,11 +102,13 @@ Paste the frame 10 seconds after and crop the animation to 40 frames long.
 
 ![](pasteandcrop.PNG "Fig. 26 The final animation")
 
+## Animation Rendering
 
+![](camerarender.PNG "Fig. 27 The camera view")
 
+Adjust the camera so the humanoid is inside the box (Use 0 to select the camera). Change the settings to your liking including specifying a format, location, and quality. Press the Animation button to begin the rendering.
 
-
-
+![](Rendering.PNG "")
 
 
 
