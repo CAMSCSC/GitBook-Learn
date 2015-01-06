@@ -123,4 +123,4 @@ The render result will pop up, switch to 3D view.
 
 Press 'A' to select All or you can carefully mark a seam
 
-![](markseam.PNG "")
+![](markseam.PNG "Fig. 32 Selecting everything is poor choice for unwrapping a UV")
