@@ -393,7 +393,7 @@ Is the only type of image steganography LSB? No. There are many other types of i
 We can hide data after the footer of some image formats. JPG images read only from header to footer. Thus, we can safely put any data we want after the footer without disrupting the image at all. However, this method is easily detectable when viewing the contents of the file in a text editor or hex editor.
 
 |Original|With EOF Steg|
-|---|---|
+|:---:|:---:|
 |![](eof.jpg "Figure 4: Original JPG")|![](eof_s.jpg "Figure 4: JPG with EOF steganography")|
 
 Let's look at how easy it is to detect EOF Steganography.
