@@ -357,17 +357,17 @@ def hide(input_image_file, message):
 		for col in range(width):
 
 			if index + 1 <= len(message_bits):
-			
+
 				(r, g, b, a) = img.getpixel((col, row))
 
 				r = setlsb(r, message_bits[index])
-				
+
 				if index + 2 <= len(message_bits):
 					g = setlsb(g, message_bits[index+1])
-					
+
 				if index + 3 <= len(message_bits):
 					b = setlsb(b, message_bits[index+2])
-					
+
 				if index + 4 <= len(message_bits):
 					a = setlsb(a, message_bits[index+3])
 
