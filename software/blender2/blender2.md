@@ -43,3 +43,14 @@ Rotate the camera to get a side view, select all, scale on the y axis by .5
 ![](scaley.PNG "Fig. 11 Slimmer body")
 
 Shift + A and add a UV Sphere and place it as a head
+
+![](shiftauvsphere.PNG "Fig. 12 A human-oid")
+
+Add a subdivision surface and smooth out the object with views
+
+![](subsurface.PNG "Fig. 13 The Smoothness")
+
+Press Tab and apply the modifiers
+
+![](ApplyObjectMode.PNG "Fig. 14 The Completed Humanoid")
+
