@@ -108,7 +108,7 @@ Paste the frame 10 seconds after and crop the animation to 40 frames long.
 
 Adjust the camera so the humanoid is inside the box (Use 0 to select the camera). Change the settings to your liking including specifying a format, location, and quality. Press the Animation button to begin the rendering.
 
-![](Rendering.PNG "")
+![](Rendering.PNG "Fig. 28 Rendering the video")
 
 
 
