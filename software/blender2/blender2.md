@@ -88,7 +88,7 @@ Insert a keyframe at frame 0. Keyframes: Insert -> Whole Character
 
 Go 10 seconds into the timeline and start posing the animation. In this example, the left knee will lift and then the right will lift.
 
-![](anim2.PNG "")
+![](anim2.PNG "Fig. 23 Posing the Leg")
 
 
 
