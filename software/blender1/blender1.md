@@ -21,4 +21,28 @@
 
 <p>The Blender UI is highly customizable due to the fact that you can create many windows that display different things. Figure 2 shows a 3D view first and foremost, on the bottom a timeline, and on the right the outliner and properties. The different windows will be explained separately.</p>
 
-<h3>3D View</h3>
+### 3D View
+![](blendui3dview.png "Fig. 3 The 3D view is your main workspace")
+<p>The 3D view provides a view of the model you are using. It also has tools, cameras, lights, and object deformation abilities.</p>
+
+### Tool Bar: In Depth
+![](blenduitools.png "Fig. 4 The tools given to you in Blender are expansive")
+<p>The tools at your disposal include:</p>
+<ul>
+	<li>Transform manipulation</li>
+	<li>History control aka ctrl z</li>
+	<li>Primitive additions</li>
+	<li>Relations (Parenting and grouping)</li>
+	<li>Animation control with keyframes, motion paths, and baking</li>
+	<li>Rigidbody tools for physics</li>
+	<li>Grease pencil</li>
+	<li>And once you enter object mode, a whole lot of deformation options</li>
+</ul>
+		
+### Info Bar
+![](blenduiinfo.png "Fig. 5 The info bar is used for File, Add, Render, Window, and Help")
+<p>The info bar is found in most programs and functions the same as others.</p>
+### Animation Timeline
+![](blenduianim.png "Fig. 6 The Animation Timeline is used to add frames of animations")
+
+		
