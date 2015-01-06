@@ -72,7 +72,7 @@ Select the top and extrude another bone. Continue with the entire body and appro
 
 Tab to object mode and parent the Bones to the Body and hit Ctrl-P and Select Bones -> Automatic Weights
 
-![](objecttoparent.PNG "Fig. 19")
+![](objecttoparent.PNG "Fig. 19 Parenting the Body to the Armature")
 
 
 
