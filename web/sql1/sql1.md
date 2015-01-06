@@ -20,7 +20,7 @@ A server contains databases. Each database contains tables. Each table contains 
 
 
 ID  |  Name      |  Secret  
---  |  --------  |  ------  
+----|------------|----------  
 1   |  Karina    |  uBarr   
 2   |  Bob       |  chicken 
 3   |  Mark      |  600     
