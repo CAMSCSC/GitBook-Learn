@@ -1,7 +1,7 @@
 # Introduction to Blender
 ![](blendlogo.png "Fig. 1 The Blender Logo")
 <h3>What is Blender?</h3>
-<p>Taken directly from the site "Blender is a free and open source 3D animation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, even video editing and game creation." To say the least, Blender is a highly advanced program.<p> 
+<p>Taken directly from the site "Blender is a free and open source 3D animation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, even video editing and game creation." To say the least, Blender is a highly advanced program.<p>
 <h3>What can Blender do?</h3>
 		<ul>
 			<li>Create 3D models</li>
@@ -13,10 +13,10 @@
 			<li>Video editor</li>
 			<li>Text editor</li>
 		</ul>
-		
+
 		<h3>Why Blender?</h3>
 		<p>Blender is free!</p>
-		
+
 ![](blendui.PNG "Fig. 2 The Blender interface can be quite confusing at first")
 
 <p>The Blender UI is highly customizable due to the fact that you can create many windows that display different things. Figure 2 shows a 3D view first and foremost, on the bottom a timeline, and on the right the outliner and properties. The different windows will be explained separately.</p>
@@ -38,7 +38,7 @@
 	<li>Grease pencil</li>
 	<li>And once you enter object mode, a whole lot of deformation options</li>
 </ul>
-		
+
 ### Info Bar
 ![](blenduiinfo.png "Fig. 5 The info bar is used for File, Add, Render, Window, and Help")
 <p>The info bar is found in most programs and functions the same as others.</p>
@@ -55,7 +55,7 @@ It is a tree of object currently in the scene you are working in.
 ### Properties
 ![](blenduiprop.png "Fig. 8 Properties gives a view of all of the properties of an object")
 
-Many properties can be accessed. Just look at all of the tabs at the top.		
+Many properties can be accessed. Just look at all of the tabs at the top.
 
 ### Modifiers
 ![](blenduimod.png "Fig. 9 Modifiers are my favorite part of properties")

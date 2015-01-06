@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>SQL 1 | Introduction</title>
+        <title>Constitution | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,8 +18,6 @@
     
     
     
-    <link rel="next" href="..\../web/sql2/sql2.html" />
-    
     
 
         
@@ -31,7 +29,7 @@
 
 
         
-    <div class="book"  data-level="2.1" data-basepath="..\.." data-revision="1420527615512">
+    <div class="book"  data-level="1.1" data-basepath="..\.." data-revision="1420527615512">
     
 
 <div class="book-summary">
@@ -72,7 +70,7 @@
                 
     
         
-        <li class="chapter " data-level="1.1" data-path="home/constitution/constitution.html">
+        <li class="chapter active" data-level="1.1" data-path="home/constitution/constitution.html">
             
                 
                     <a href="..\../home/constitution/constitution.html">
@@ -102,7 +100,7 @@
                 
     
         
-        <li class="chapter active" data-level="2.1" data-path="web/sql1/sql1.html">
+        <li class="chapter " data-level="2.1" data-path="web/sql1/sql1.html">
             
                 
                     <a href="..\../web/sql1/sql1.html">
@@ -319,118 +317,49 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_53">
+                    <section class="normal" id="section-gitbook_49">
                     
-                        <h1 id="sql-injections">SQL Injections</h1>
-<h3 id="what-is-sql">What is SQL?</h3>
-<p>SQL or Structured Query Language is a special language used to communicate with a database (usually located on the web server). It is specifically designed to manage data located in a relational database management system (DBMS). Most web servers or database systems utilize SQL databases. Each version of the SQL databases is different and some versions are proprietary. However, all of them contain quite a few inherent commands.</p>
-<h3 id="what-can-sql-do">What can SQL do?</h3>
-<ul>
-<li>Retrieve records from a database (articles, posts, comments, etc.)</li>
-<li>Insert records into a database (registration, grades, survey response, etc.)</li>
-<li>Update pre-existing records (change of address, preference change, Le Fail Counter, etc.)</li>
-<li>Create new databases and tables</li>
-<li>Execute malicious queries to DROP all of the tables (it&#39;s very possible)</li>
-<li>Many other useful tasks not mentioned here</li>
-</ul>
-<h3 id="basic-structure">Basic Structure</h3>
-<p>A server contains databases. Each database contains tables. Each table contains rows and columns. I hope you know what a table looks like. But to be safe, I&#39;ll show you an example. For the purpose of this lesson, let&#39;s create an imaginary database called <strong>tutorial_1</strong> with a table named <strong>secrets</strong>. The data below shows the structure of the table.</p>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Secret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Karina</td>
-<td>uBarr</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>chicken</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Mark</td>
-<td>600</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Andy</td>
-<td>windows</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Nicolas</td>
-<td>sqlsql</td>
-</tr>
-</tbody>
-</table>
-<p>As you can see, the table contains three columns and five rows. I explicitly stated this so you do not get confused when I refer to columns or rows later on.</p>
-<h3 id="queries">Queries</h3>
-<p>Queries allow users to tell the DBMS what the desired data is. The DBMS will plan and optimize the search operations, which makes this extremely easy for the users. Note: most queries take under a few milliseconds. The most common and crucial (might be debatable?) statement in SQL is <strong>SELECT</strong>. Examples and general formatting is shown below. Quotes are there for clarification purposes. Database and column names do no need single quotes around them (unless you want case sensitivity). However, text values, especially those after WHERE optional clause do require single quotes.</p>
-<pre><code class="lang-sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> <span class="hljs-string">'column_name(s)'</span> <span class="hljs-keyword">FROM</span> <span class="hljs-string">'table(s)'</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-string">'criterion'</span></span>
-</code></pre>
-<p>Below are some sample queries.</p>
-<pre><code class="lang-sql"><span class="hljs-comment">--Get all columns from the table.</span>
-<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> secrets
-
-<span class="hljs-comment">--Get only the column name</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets
-
-<span class="hljs-comment">--Get the name of the person whose ID is 4</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> ID=<span class="hljs-number">4</span>
-
-<span class="hljs-comment">--Whose secret is uBarr?</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> Secret=<span class="hljs-string">'uBarr'</span>
-
-<span class="hljs-comment">--Get the ID if the person is Bob or his secret 600</span>
-<span class="hljs-keyword">SELECT</span> ID <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> Name=<span class="hljs-string">'Bob'</span> <span class="hljs-keyword">AND</span> Secret=<span class="hljs-string">'600'</span>
-<span class="hljs-comment">--Note that 600 is not a number because it is in a text field</span></span>
-</code></pre>
-<h3 id="mysql-and-php">MySQL and PHP</h3>
-<p>The fun part begins here. You can execute queries on an SQL server, but it would be pointless if there was no integration or interaction with website viewers and physical web pages. Here is where PHP and MySQL comes into play. As I mentioned before, there are many versions of SQL databases (Oracle, MySQL, Microsoft SQL Server, PostgreSQL, DB2, SQlite, etc.). However, the one we will be focusing on is MySQL. MySQL is open source and it functions well with PHP. What makes it even better is that the syntax is easy to understand and horrible queries leave a lot of room for exploitations.</p>
-<p>We already looked at basic queries. Now let&#39;s look at how those queries are used with PHP.</p>
-<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
-
-<span class="hljs-comment">//Create a new database</span>
-<span class="hljs-comment">//$database = new mysqli( DB_HOST, DB_USER, DB_PASS, DB_NAME );</span>
-<span class="hljs-variable">$database</span> = <span class="hljs-keyword">new</span> mysqli( <span class="hljs-string">'localhost'</span>, <span class="hljs-string">'DB_USER'</span>, <span class="hljs-string">'DB_PASS'</span>, <span class="hljs-string">'tutorial_1'</span> );
-
-<span class="hljs-comment">//For debugging purposes in case the connection failed</span>
-<span class="hljs-keyword">if</span>( !<span class="hljs-variable">$database</span> )
-{
-    <span class="hljs-keyword">die</span>( <span class="hljs-string">'MySQL: Wrong credentials'</span> );
-}
-
-<span class="hljs-comment">//Execute a query</span>
-<span class="hljs-variable">$result</span> = <span class="hljs-variable">$database</span><span class="hljs-variable">-&gt;query</span>
-(
-    <span class="hljs-string">"SELECT Secret FROM secrets"</span>
-);
-
-<span class="hljs-comment">//For debugging purposes in case the query failed</span>
-<span class="hljs-keyword">if</span>( !<span class="hljs-variable">$result</span> )
-{
-    <span class="hljs-keyword">die</span>( <span class="hljs-string">'MySQL: Syntax error'</span> );
-}
-
-<span class="hljs-comment">//Print out all of the secrets in the order in which they were retrieved</span>
-<span class="hljs-keyword">while</span>( <span class="hljs-variable">$row</span> = mysqli_fetch_assoc( <span class="hljs-variable">$result</span> ) )
-{
-    <span class="hljs-keyword">echo</span>( <span class="hljs-string">"Secrets: "</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">'Secret'</span>] );
-}
-
-<span class="hljs-preprocessor">?&gt;</span>
-</code></pre>
-<h3 id="further-readings-and-references">Further Readings and References</h3>
-<p>&quot;Back to Basics: Writing SQL Queries&quot; - <a href="http://robots.thoughtbot.com/back-to-basics-sql" target="_blank">http://robots.thoughtbot.com/back-to-basics-sql</a></p>
-<p>&quot;SQL Injection&quot; - <a href="http://www.w3schools.com/sql/sql_injection.asp" target="_blank">http://www.w3schools.com/sql/sql_injection.asp</a></p>
+                        <h1 id="cams-computer-science-and-cyber-security-club-csc">CAMS Computer Science and Cyber Security Club (CSC)</h1>
+<h3 id="preamble">Preamble</h3>
+<p>We, the members of the California Academy of Mathematics and Science Computer Science and Cyber Security Club (CSC), in order to spread the knowledge of computer science, teach the concepts of cyber security, and inspire students to look into the field of computer and technology, do ordain and establish this constitution of the California Academy of Mathematics and Science Computer Science and Cyber Security Club.</p>
+<h3 id="article-i--name-and-location">Article I – Name and Location</h3>
+<p>The California Academy of Mathematics and Science Computer Science and Cyber Security Club (from this point on referred to as CSC), will meet in room 6014 on Thursdays from 4:00 p.m. to 5:00 p.m. The location, date, and time of the meetings can be modified at the sole discretion of the president and the sponsoring teacher. However, the name or the abbreviated name of the club cannot be changed in any manner.</p>
+<h3 id="article-ii--objective-and-purpose">Article II – Objective and Purpose</h3>
+<p>The objective of CSC is to teach and spread the knowledge of computer science to CAMS students. The ultimate purpose of this club is to inspire students to look into and possibly purse a career in the field of computer science, computer technology or cyber security.</p>
+<h3 id="article-iii--membership-and-access">Article III – Membership and Access</h3>
+<p>Membership to CSC is available for any student who attends CAMS. Prior to becoming a member, the student must agree that he/she 1) understands that everything taught in the club is for educational purpose only, 2) will not hold the club, officers, members, or sponsoring teacher accountable for any illicit activity performed using the knowledge taught in club meetings, and 3) practices good sportsmanship during club held competitions and games. Minor violations will be addressed by the sponsoring teacher. Other violations will be addressed in accordance with school district policy and state laws.</p>
+<p>Access to any network based CSC infrastructure (camscsc.org and any subdomains of camscsc.org) is available for anyone including those outside of CAMS. Members may engage any CSC infrastructure in any way they like.</p>
+<h3 id="article-iv--requirements-of-members">Article IV – Requirements of Members</h3>
+<p>No fees are required to become a member of CSC. The aforementioned fee requirement cannot be amended. Members are not required to attend any meetings but should show considerable interest in the lessons and challenges presented in the club as well as actively participate in online challenges. Officers are not allowed to expel any member from the club for failing to attend or failing to show dedication.</p>
+<h3 id="article-v--officers-eligibility-and-privileges">Article V – Officers, Eligibility, and Privileges</h3>
+<p>The main CSC board will consist of only three (3) individuals. This cannot be amended. The three rudimentary positions are President, Vice President, and Curriculum Manager. Other positions can be created at the discretion of the President or the sponsoring teacher. Board members WILL NOT be chosen by an election. Instead, they will be chosen by the previous board members and the sponsoring teacher. In order to be considered for a position, the member must have attended CSC for a minimum of two (2) years. His/her team must also place top 5 in the CSC leaderboard.</p>
+<p>Officers or the sponsoring teacher reserve the right to alter the curriculum at any given time. Members may petition or requests features, changes, or additions to any aspect of CSC at any time. Such alterations will be decided by a majority vote of the three main board members.</p>
+<h3 id="article-vi--officer-duties-and-terms">Article VI – Officer Duties and Terms</h3>
+<p>The terms of officers are per semester. New candidates for officers can be considered at the end of every semester. However, new candidates will only become an officer if the current officer in that position chooses to step down. The President’s role is to manage the club as well as produce lessons and challenges. The Vice President’s role is to assist the President in managing the club and obtaining sponsorships. The Curriculum Manager’s role is to plan the lessons being taught in the club and assist the President in coming up with challenges. Aside from the President’s role, any other positions’ role can be changed at the discretion of the President.</p>
+<h3 id="article-vii---impeachment">Article VII - Impeachment</h3>
+<p>In the case that an officer is not fit to lead or does not fulfill his/her duties, the President has the power to impeach him/her from office with agreement from the sponsoring teacher. However, if members of the board and the sponsoring teacher believe that the President is not fit for his/her duties, they may impeach him/her after a unanimous vote. In that case, the Vice President would rise to become the new President and the Curriculum Manager can choose either to become a Vice President or remain as Curriculum Manager. The sponsoring teacher holds the ultimate authority when a possible impeachment of a board member is involved.</p>
+<h3 id="article-viii--vacancies-in-office">Article VIII – Vacancies in Office</h3>
+<p>There cannot be vacancies in the rudimentary positions of the office. In the case that an officer wishes abdicate, the sponsoring teacher will be responsible for choosing another club member to replace his/her position.</p>
+<h3 id="article-ix--budgeting-and-fundraisers">Article IX – Budgeting and Fundraisers</h3>
+<p>The Vice President and the sponsoring teacher will be in charge of the budgeting. There will be no fundraising in the club unless the president chooses to have one. However, the Vice President and President should actively seek to obtain sponsorships to host regional computer science competitions or hackathons as well as to award top members at the end of a school year. Any prize money obtained from competitions will be used at the discretion of the board members and sponsoring teacher.
+Article X – Club Meetings and Minimum Number Quorum</p>
+<p>Club meetings will be held in the sponsoring teacher’s room unless otherwise stated. A minimum of 5 members (excluding the board members) will be required for a meeting. This can be amended. Club meetings should consist of at least one new lesson, challenge, and/or walkthrough.</p>
+<h3 id="article-xi--parliamentary-authority">Article XI – Parliamentary Authority</h3>
+<p>An informal version of Robert’s Rules of Order will be used to conduct club meetings.</p>
+<h3 id="article-xii---amendments">Article XII - Amendments</h3>
+<p>Amendments can be made by the board (majority vote) to any section except specific statements which indicate that they cannot be amended. The sponsoring teacher may overrule any votes by the board and make alterations to the constitution at any time.
+Article XIII - Miscellaneous</p>
+<ol>
+<li><p>Maintenance of Domain:</p>
+<p> The domain camscsc.org must be renewed at the end of every one (1) year period. The current domain is set to renew yearly until February 20th, 2017. Hosting provider can be chosen by the Officers. Unless otherwise stated or a hosting service change is required, the billing information as well as the contact information should not be modified. In addition, contact information should be set to the sponsoring teacher’s name and the school’s address / information.</p>
+</li>
+<li><p>Damage to Server:</p>
+<p> All attacks done to the CSC server by members of CSC are permitted. However, members shall not violate the hosting service’s terms of service by engaging in attacks such as the DoS without previously obtained permission. It is recommended that the server be backed up periodically in case damage is done.</p>
+</li>
+<li><p>Participation of Alumni:</p>
+<p> Past officers of CSC may assist in any aspect of the club. However, they may not make any direct changes to the CSC server unless given permission to do so by the current officers.</p>
+</li>
+</ol>
 
                     
                     </section>
@@ -441,8 +370,6 @@
         </div>
 
         
-        
-        <a href="..\../web/sql2/sql2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: SQL 2"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
