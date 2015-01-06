@@ -116,7 +116,7 @@ The render result will pop up, switch to 3D view.
 
 ![](3dview.PNG "Fig. 30 3D View")
 
-
+## UV Wrapping
 
 
 
