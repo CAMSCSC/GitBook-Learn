@@ -119,4 +119,6 @@ The render result will pop up, switch to 3D view.
 ## UV Wrapping
 ###### UV Wrapping is a method of creating a map of the model and texturing it.
 
+![](uveditmode.PNG "Fig. 31 Entering UV Edit Mode")
+
 
