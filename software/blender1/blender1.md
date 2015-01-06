@@ -60,4 +60,18 @@ Many properties can be accessed. Just look at all of the tabs at the top.
 ### Modifiers
 ![](blenduimod.png "Fig. 9 Modifiers are my favorite part of properties")
 
+Modifiers can cause awesome things to happen to your model or scene. The best way to learn about how they work is to play around.
 
+### Hotkeys
+
+Hotkeys make life easier, here are important ones
+<ul>
+    <li>Tab - used for switching to edit mode and back (object needs to be selected)</li>
+	<li>Shift S – cursor snap</li>
+	<li>Ctrl S – save</li>
+	<li>X – delete</li>
+	<li>Z – X-ray</li>
+	<li>Shift-A – Add an object </li>
+	<li>Ctrl-P – Parent an object</li>
+	<li>I - Insert keyframe</li>
+		</ul>
