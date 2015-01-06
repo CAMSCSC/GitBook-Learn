@@ -9,6 +9,7 @@
 * Forensics
    * [Steganography 1](forensics/steg1/steg1.md)
    * [File Carving 1](forensics/filecarving1/filecarving1.md)
+   * [File Structure](forensics/filestructure/filestructure.md)
 * Hardware
 * Software
    * [Blender 1](software/blender1/blender1.md)
