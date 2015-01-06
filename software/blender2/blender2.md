@@ -110,7 +110,7 @@ Adjust the camera so the humanoid is inside the box (Use 0 to select the camera)
 
 ![](Rendering.PNG "Fig. 28 Rendering the video")
 
-![](render.gif "Fig. 30 The GIFed result")
+![](render.gif "Fig. 29 The GIFed result")
 
 The render result will pop up, switch to 3D view.
 
