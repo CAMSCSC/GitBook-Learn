@@ -31,7 +31,7 @@
 
 
         
-    <div class="book"  data-level="3.1" data-basepath="..\.." data-revision="1420584700982">
+    <div class="book"  data-level="3.1" data-basepath="..\.." data-revision="1420584864907">
     
 
 <div class="book-summary">
@@ -335,7 +335,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_257">
+                    <section class="normal" id="section-gitbook_326">
                     
                         <h1 id="steganography-1">Steganography 1</h1>
 <p><img src="header.png" alt="" title="Figure 1: Do you see a difference?">
@@ -428,7 +428,7 @@ Total of 4096^3 colors and 4096 levels of transparency.
 <h3 id="not-unlimited">Not Unlimited</h3>
 <p>Remember when I said that color depth is pertinent to steganography? I am about to explain why. Before you hide data in something, you&#39;ll probably want to make sure that it can actually store everything and not run out of storage space :p. This is where color depth comes in. Each pixel in an 8-bit image contains 8 bits (if you haven&#39;t figured that out yet). Each 8 bits or byte can store one bit of information using LSB. That means a 24-bit JPG has the capacity to store 3 bits of information per pixel. The maximum storage capacity of a carrier can be defined as:</p>
 <script type="math/tex; mode=display">capacity = width \times height \times \dfrac{bitdepth}{8}</script><h3 id="putting-it-together">Putting It Together</h3>
-<p>We can put all that we&#39;ve learned into play to actually perform steganography. There are many steganography tools available. Some of those tools do not utilize LSB to hide information. No, they don&#39;t use MSB. They use other more complex algorithms. We will take a look at the text steganography portion of a Python stegnography module called Stéganô. I&#39;ve rewritten and combined important parts of the code so I can explain how the they work. Let&#39;s look at how we can hide information in images. The code below comes from the file hide.py (a better custom version that fixes a bug is available for download in a later section).</p>
+<p>We can put all that we&#39;ve learned into play to actually perform steganography. There are many steganography tools available. Some of those tools do not utilize LSB to hide information. No, they don&#39;t use MSB. They use other more complex algorithms. We will take a look at the text steganography portion of a Python stegnography module called Stéganô. I&#39;ve rewritten and combined important parts of the code so I can explain how the they work. Let&#39;s look at how we can hide information in images. The code below comes from the file <a href="hide.py">hide.py</a> (a better custom version that fixes a bug is available for download in a later section).</p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setlsb</span><span class="hljs-params">(component, bit)</span>:</span>
@@ -553,7 +553,7 @@ message_bits = <span class="hljs-string">""</span>.join(a2bits_list(message))
 </code></pre>
 <p>Lines 40-42: If the file is not being imported, use the carrier &#39;carrier.png&#39;, hide the message &#39;The secret message.&#39;, and save the output to &#39;output.png&#39;.</p>
 <h3 id="bug-fix">Bug Fix</h3>
-<p>The aforementioned issue of &quot;sets of 3s&quot; incomplete data hiding results when one bit of the message is left out at the end. This results from the set of three check. A fixed version is available for download - hide_fix.py. Figure out what has been fixed and why the fix works.</p>
+<p>The aforementioned issue of &quot;sets of 3s&quot; incomplete data hiding results when one bit of the message is left out at the end. This results from the set of three check. A fixed version is available for download - <a href="hide_fix.py">hide_fix.py</a>. Figure out what has been fixed and why the fix works.</p>
 <h3 id="retrieving-the-data">Retrieving the Data</h3>
 <p>Now that we have hidden the data, we want a way to get it back. Stéganô also includes a function to do that. I have simplified the source into reveal.py. The reveal function works by working on the image in 8 bit (1 byte) chunks. Therefore, it can recover the hidden messages from images of different color depths and transparency options.</p>
 <pre><code class="lang-python"><span class="hljs-keyword">from</span> PIL <span class="hljs-keyword">import</span> Image

@@ -121,7 +121,7 @@ $$capacity = width \times height \times \dfrac{bitdepth}{8} $$
 
 ### Putting It Together
 
-We can put all that we've learned into play to actually perform steganography. There are many steganography tools available. Some of those tools do not utilize LSB to hide information. No, they don't use MSB. They use other more complex algorithms. We will take a look at the text steganography portion of a Python stegnography module called Stéganô. I've rewritten and combined important parts of the code so I can explain how the they work. Let's look at how we can hide information in images. The code below comes from the file hide.py (a better custom version that fixes a bug is available for download in a later section).
+We can put all that we've learned into play to actually perform steganography. There are many steganography tools available. Some of those tools do not utilize LSB to hide information. No, they don't use MSB. They use other more complex algorithms. We will take a look at the text steganography portion of a Python stegnography module called Stéganô. I've rewritten and combined important parts of the code so I can explain how the they work. Let's look at how we can hide information in images. The code below comes from the file [hide.py](hide.py) (a better custom version that fixes a bug is available for download in a later section).
 
 ```python
 from PIL import Image
@@ -287,7 +287,7 @@ Lines 40-42: If the file is not being imported, use the carrier 'carrier.png', h
 
 ### Bug Fix
 
-The aforementioned issue of "sets of 3s" incomplete data hiding results when one bit of the message is left out at the end. This results from the set of three check. A fixed version is available for download - hide_fix.py. Figure out what has been fixed and why the fix works.
+The aforementioned issue of "sets of 3s" incomplete data hiding results when one bit of the message is left out at the end. This results from the set of three check. A fixed version is available for download - [hide_fix.py](hide_fix.py). Figure out what has been fixed and why the fix works.
 
 ### Retrieving the Data
 
