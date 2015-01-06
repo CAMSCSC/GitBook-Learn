@@ -4,7 +4,7 @@
 
 Where does MySQL store information about databases and tables? Can we retrieve the information? MySQL and other SQL servers store metadata about objects in a database called INFORMATION_SCHEMA. Before proceeding however, we need to understand an SQL syntax. SQL works in a hierarchy structure (database, table, column). To simply some processes, a period is used in place of qualifiers. This allows us to select a column without the need of a complex query.
 
-```SQL
+```sql
 #Select the column 'test' from the table 'sql2' in the database 'tutorial_2'
 SELECT test FROM tutorial_2.sql2
 ```
