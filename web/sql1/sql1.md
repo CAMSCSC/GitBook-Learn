@@ -1,4 +1,4 @@
-# SQL Injections
+# SQL Injection 1
 
 ### What is SQL?
 

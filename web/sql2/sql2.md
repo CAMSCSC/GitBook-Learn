@@ -1,4 +1,4 @@
-# SQL Injections 2
+# SQL Injection 2
 
 ### More Advanced SQL
 
