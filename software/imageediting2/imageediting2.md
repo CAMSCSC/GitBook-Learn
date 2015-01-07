@@ -19,11 +19,10 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 <p>Create a new image by going to File -> New or Ctrl-N</p>
 		
 <h3>Tools</h3>
-		<figure>
-			<img src="tools.png"/>
-			<figcaption>Fig. 4 The Toolbox that is included in GIMP</figcaption>
-		</figure>
-		<p>The tools in the toolbox include:</p>
+
+![](tools.PNG "Fig. 4 The Toolbox that is included in GIMP")
+
+<p>The tools in the toolbox include:</p>
 		<ul>
 			<li>Rectangle, Ellipse, Free-form Select Tool - Used to select areas</li>
 			<li>Magic Wand/Fuzzy Select Tool - Used to select contiguous areas</li>
@@ -59,28 +58,20 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 			<li>Dodge/Burn Tool - Lightens or darkens an image's shadows, mid tones, or highlights</li>
 		</ul>
 		
-		<h3>"Photoshopping" Edges</h3>
-		<figure>
-			<img src="shop1.png"/>
-			<figcaption>Fig. 5 Use the Fuzzy Select Tool</figcaption>
-		</figure>
-		<figure>
-			<img src="shop2.png"/>
-			<figcaption>Fig. 6 Select the background areas using SHIFT + RMB</figcaption>
-		</figure>
-		<figure>
-			<img src="shop3.png"/>
-			<figcaption>Fig. 7 Hit CTRL-I in order to invert your selection and select your object</figcaption>
-		</figure>
-		<figure>
-			<img src="shop4.png"/>
-			<figcaption>Fig. 8 Hit CTRL-X to cut out your selection and put it in your clipboard</figcaption>
-		</figure>
-		<figure>
-			<img src="shop5.png"/>
-			<figcaption>Fig. 9 In a different image, hit CTRL-V to paste it and the move tool to place it</figcaption>
-		</figure>
+### "Photoshopping" Edges
+
+![](shop1.png "Fig. 5 Use the Fuzzy Select Tool")
+
+![](shop2.png "Fig. 6 Select the background areas using SHIFT + RMB")
+
+![](shop3.png "Fig. 7 Hit CTRL-I in order to invert your selection and select your object")
+
+![](shop4.png "Fig. 8 Hit CTRL-X to cut out your selection and put it in your clipboard")
+
+![](shop5.png "Fig. 9 In a different image, hit CTRL-V to paste it and the move tool to place it")
+
 		<p>To become a photoshop master, all you have to do is learn how to use the select tools, copy, paste and move.</p>
 		
-		<h3>Further Readings and References</h3>
-		<p>"GIMP - Wiki Books" - <a href="http://en.wikibooks.org/wiki/GIMP" target="_blank">http://en.wikibooks.org/wiki/GIMP</a></p>
+<h3>Further Readings and References</h3>
+	["GIMP - Wiki Books"](http://en.wikibooks.org/wiki/GIMP)
+	
