@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+   * [TOC](SUMMARY.md)
 * Club Items
    * [Constitution](home/constitution/constitution.md)
 * Web
