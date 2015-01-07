@@ -11,6 +11,7 @@
    * [File Carving 1](forensics/filecarving1/filecarving1.md)
    * [File Structure](forensics/filestructure/filestructure.md)
 * Hardware
+   * [Computer Hardware 1](hardware/computer_hardware_1/computerhardware1.md)
 * Software
    * [Blender 1](software/blender1/blender1.md)
    * [Blender 2](software/blender2/blender2.md)
