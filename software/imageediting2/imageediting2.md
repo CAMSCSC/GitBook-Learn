@@ -56,7 +56,8 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 			<li>Blur/Sharpen Tool - Blurs or sharpens an image</li>
 			<li>Smudge Tool - Spreads pixels in the direction of a "push"</li>
 			<li>Dodge/Burn Tool - Lightens or darkens an image's shadows, mid tones, or highlights</li>
-		</ul>
+			
+</ul>
 		
 ### "Photoshopping" Edges
 
