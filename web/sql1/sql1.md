@@ -97,6 +97,86 @@ while( $row = mysqli_fetch_assoc( $result ) )
 ?>
 ```
 
+The code above is a basic PHP script that prints out the secrets. However, there is no user interaction. Let's look at one which allows for user interaction (with a twist).
+
+```php
+<?php
+
+//Omitted database setup code
+
+//Get the posted user input
+//Something similar to something.php?user=stuff
+$input = $_POST['user'];
+
+//The twist
+if( $input == 'Karina' )
+{
+	exit();
+}
+
+//Execute a query (where '$input' is the PHP variable $input)
+$result = $database->query
+(
+	"SELECT Secret FROM secrets WHERE Name='$input'"
+);
+
+//For debugging purposes in case the query failed
+if( !$result )
+{
+	die( 'MySQL: Syntax error' );
+}
+
+//Print out all of the secrets in the order in which they were retrieved
+while( $row = mysqli_fetch_assoc( $result ) )
+{
+	echo( "Secrets: " . $row['Secret'] );
+}
+
+?>
+```
+
+You might be asking: what is the twist? Well, if the code detects that you are trying to get the secret from the name 'Karina', it will exit without executing the query. In addition, the query will only output one result at a time. But what if I desperately wanted Karina's secret? We can use the quotes to our advantage.
+
+The following would be the query if we posted name=**Bob**:
+
+```sql
+SELECT Secret FROM secrets WHERE User='Bob'
+```
+
+I wonder what would happen if we posted name=**a' OR 'a'='a**:
+
+```sql
+SELECT Secret FROM secrets WHERE User='a' OR 'a'='a'
+```
+
+What does this result in? We know that there is no user named 'a' so the first part would evaluate to False. However, 'a' definitely equals 'a'. Therefore, the second part would evaluate to True. False or True is True. Wait, so what happens? The always true statement causes the query to select EVERY SINGLE Secret from the database, bypassing the original user check. This is the basis of SQL injection. We will go into more advanced and more malicious injections in the next lesson.
+
+### Preventing SQL Injections
+
+Obviously, no one wants visitors to perform SQL Injections on his/her server. To prevent this, PHP has included a simple function to escape dangerous and malicious things from the input such as newline characters (\n), return characters (\r), single and double quotes (', "), and Control-Z. Don't forget to also set the character set for added safety.
+
+```php
+<?php
+
+//Create a new database
+$database = new mysqli( 'localhost', 'DB_USER', 'DB_PASS', 'tutorial_1' );
+
+//For debugging purposes in case the connection failed
+if( !$database )
+{
+	die( 'MySQL: Wrong credentials' );
+}
+
+//Set the character set
+$database->set_charset("utf8");
+
+//Get the posted user input
+$input = $_POST['user'];
+
+//Sanitize the input
+$input = $database->real_escape_string( $input );
+```
+
 ### Further Readings and References
 
 "Back to Basics: Writing SQL Queries" - http://robots.thoughtbot.com/back-to-basics-sql
