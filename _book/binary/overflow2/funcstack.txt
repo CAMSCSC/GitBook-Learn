@@ -1,0 +1,12 @@
+Lower Memory Address
+
+|00000000|		ESP of new function
+**********		(omitted data)
+|00000000|		Start of new function's allocated memory
+|00000000|		Saved EBP (from push EBP)
+|00000000|		Return Address (saved EIP)
+|00000000|		Argument 1
+**********		(omitted data)
+|00000000|		Last Argument (bottom of stack)
+
+Higher Memory Address

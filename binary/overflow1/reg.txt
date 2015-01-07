@@ -1,0 +1,8 @@
+EAX     |00000000|     General Purpose Register
+EBX     |00000000|     General Purpose Register
+ECX     |00000000|     General Purpose Register
+EDX     |00000000|     General Purpose Register
+EBP     |00000000|     Base Pointer Register
+ESP     |00000000|     Stack Pointer Register
+ESI     |00000000|     General Purpose Register
+EDI     |00000000|     General Purpose Register

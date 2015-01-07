@@ -2,8 +2,8 @@
 
 ### What is Linux?
 
-<p>To make it simple, Linux is an operating system just like Mac OS X or Windows. Linux has many variations called distros. There are over 600 distributions to choose from.<p> 
-		
+<p>To make it simple, Linux is an operating system just like Mac OS X or Windows. Linux has many variations called distros. There are over 600 distributions to choose from.<p>
+
 ### What are Linux's features?
 <ul>
 			<li>Open Source</li>
@@ -13,7 +13,7 @@
 			<li>Small size</li>
 			<li>Low system requirements</li>
 		</ul>
-		
+
 ### Ubuntu
 To have an experience that is as easy as Mac OS X choose Ubuntu
 
@@ -28,13 +28,13 @@ To have an experience that is as easy as Mac OS X choose Ubuntu
 			<li>Going mobile</li>
 			<li>Easy UI</li>
 		</ul>
-		
+
 <h3>Manjaro</h3>
 		<p>To have an experience that is straight out of the box ready choose Manjaro</p>
-		
+
 ![](manjaro.png "Fig. 2 The Manjaro interface")
 		<p>Features</p>
-		
+
 <ul>
 			<li>Based on Arch</li>
 			<li>Suite of applications</li>
@@ -42,12 +42,12 @@ To have an experience that is as easy as Mac OS X choose Ubuntu
 			<li>Fast</li>
 			<li>Powerful</li>
 		</ul>
-		
+
 <h3>Gentoo</h3>
 		<p>To have an experience that is as hard choose Gentoo</p>
 
 ![](gentoo.png "Fig. 1 A Gentoo interface")
-			
+
 <p>Features</p>
 		<ul>
 			<li>Super customizable</li>
@@ -56,14 +56,14 @@ To have an experience that is as easy as Mac OS X choose Ubuntu
 			<li>Advanced</li>
 			<li>Fast</li>
 		</ul>
-		
+
 <h3>How do I install Linux?</h3>
 		<ul>
 			<li>Virtually (Virtual Machines)</li>
 			<li>Live CD/DVD</li>
 			<li>Live USB</li>
 		</ul>
-		
+
 <h3>VM</h3>
 		<p>A virtual machine allows you to run an OS inside your own operating system</p>
 		<ul>
@@ -72,7 +72,7 @@ To have an experience that is as easy as Mac OS X choose Ubuntu
 			<li>3. Enter Options and continue</li>
 			<li>4. Rest is done for you!</li>
 		</ul>
-		
+
 <h3>Live CD/DVD</h3>
 		<p>**CAREFUL**: Partitioning your drive might delete data on your drive</p>
 		<ul>
@@ -82,7 +82,7 @@ To have an experience that is as easy as Mac OS X choose Ubuntu
 			<li>4. Boot from CD/DVD</li>
 			<li>4. Install onto HDD</li>
 		</ul>
-		
+
 <h3>Live USB</h3>
 		<p>**CAREFUL**: Partitioning your drive might delete data on your drive</p>
 		<ul>

@@ -1,0 +1,51 @@
+(gdb) set disassembly-flavor intel
+(gdb) file ex5
+Reading symbols from /root/Desktop/ex5...(no debugging symbols found)...done.
+(gdb) info functions
+All defined functions:
+
+Non-debugging symbols:
+0x08048300  _init
+0x08048340  strcpy
+0x08048340  strcpy@plt
+0x08048350  puts
+0x08048350  puts@plt
+0x08048360  __gmon_start__
+0x08048360  __gmon_start__@plt
+0x08048370  exit
+0x08048370  exit@plt
+0x08048380  __libc_start_main
+0x08048380  __libc_start_main@plt
+0x08048390  _start
+0x080483c0  deregister_tm_clones
+0x080483f0  register_tm_clones
+0x08048430  __do_global_dtors_aux
+0x08048450  frame_dummy
+0x0804847c  lonely
+0x08048490  func
+0x080484ca  main
+0x08048500  __libc_csu_fini
+---Type <return> to continue, or q <return> to quit---
+0x08048510  __libc_csu_init
+0x0804856a  __i686.get_pc_thunk.bx
+0x08048570  _fini
+(gdb) disassemble func
+Dump of assembler code for function func:
+   0x08048490 <+0>:		push   ebp
+   0x08048491 <+1>:		mov    ebp,esp
+   0x08048493 <+3>:		sub    esp,0x38
+   0x08048496 <+6>:		mov    eax,DWORD PTR [ebp+0xc]
+   0x08048499 <+9>:		mov    DWORD PTR [esp+0x4],eax
+   0x0804849d <+13>:	lea    eax,[ebp-0x28]
+   0x080484a0 <+16>:	mov    DWORD PTR [esp],eax
+   0x080484a3 <+19>:	call   0x8048340 <strcpy@plt>
+   0x080484a8 <+24>:	cmp    DWORD PTR [ebp+0x8],0x1
+   0x080484ac <+28>:	jne    0x80484bc <func+44>
+   0x080484ae <+30>:	mov    DWORD PTR [esp],0x80485a0
+   0x080484b5 <+37>:	call   0x8048350 <puts@plt>
+   0x080484ba <+42>:	jmp    0x80484c8 <func+56>
+   0x080484bc <+44>:	mov    DWORD PTR [esp],0x0
+   0x080484c3 <+51>:	call   0x8048370 <exit@plt>
+   0x080484c8 <+56>:	leave  
+   0x080484c9 <+57>:	ret    
+End of assembler dump.

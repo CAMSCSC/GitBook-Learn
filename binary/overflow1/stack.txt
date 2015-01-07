@@ -1,0 +1,8 @@
+Lower Memory Address
+
+          <-   New data goes here
+|00000000|     Top of stack
+|00000000|
+|00000000|     Bottom of stack
+
+Higher Memory Address

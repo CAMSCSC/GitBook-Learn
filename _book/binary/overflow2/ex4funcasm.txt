@@ -1,0 +1,20 @@
+(gdb) disassemble func
+Dump of assembler code for function func:
+   0x0804847c <+0>:		push   ebp
+   0x0804847d <+1>:		mov    ebp,esp
+   0x0804847f <+3>:		sub    esp,0x88
+   0x08048485 <+9>:		mov    eax,DWORD PTR [ebp+0xc]
+   0x08048488 <+12>:	mov    DWORD PTR [esp+0x4],eax
+   0x0804848c <+16>:	lea    eax,[ebp-0x6c]
+   0x0804848f <+19>:	mov    DWORD PTR [esp],eax
+   0x08048492 <+22>:	call   0x8048340 <strcpy@plt>
+   0x08048497 <+27>:	cmp    DWORD PTR [ebp+0x8],0x1
+   0x0804849b <+31>:	jne    0x80484ab <func+47>
+   0x0804849d <+33>:	mov    DWORD PTR [esp],0x8048580
+   0x080484a4 <+40>:	call   0x8048350 <puts@plt>
+   0x080484a9 <+45>:	jmp    0x80484b7 <func+59>
+   0x080484ab <+47>:	mov    DWORD PTR [esp],0x0
+   0x080484b2 <+54>:	call   0x8048370 <exit@plt>
+   0x080484b7 <+59>:	leave  
+   0x080484b8 <+60>:	ret    
+End of assembler dump.

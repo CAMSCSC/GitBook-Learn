@@ -1,0 +1,21 @@
+push ebp
+mov ebp, esp
+and esp, 0xf0
+sub esp, 32
+mov dword ptr [esp+28], 1
+mov dword ptr [esp+24], 2
+mov dword ptr [esp+20], 3
+mov eax, dword ptr [esp+28]
+mov dword ptr [esp+4], eax
+move dword ptr [esp], 0x08048510
+call 0x08048300
+mov eax, dword ptr [esp+24]
+mov dword ptr [esp+4], eax
+mov dword ptr [esp], 0x08048510
+call 0x08048300
+mov eax, dword ptr [esp+20]
+mov dword ptr [esp+4], eax
+move dword ptr [esp], 0x08048510
+call 0x08048300
+leave
+ret

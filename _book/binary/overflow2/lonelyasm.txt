@@ -1,0 +1,10 @@
+(gdb) disassemble lonely
+Dump of assembler code for function lonely:
+   0x0804847c <+0>:		push   ebp
+   0x0804847d <+1>:		mov    ebp,esp
+   0x0804847f <+3>:		sub    esp,0x18
+   0x08048482 <+6>:		mov    DWORD PTR [esp],0x8048590
+   0x08048489 <+13>:	call   0x8048350 <puts@plt>
+   0x0804848e <+18>:	leave  
+   0x0804848f <+19>:	ret    
+End of assembler dump.
