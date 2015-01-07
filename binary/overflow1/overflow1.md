@@ -91,11 +91,13 @@ The aforementioned special registers are crucial when it comes to memory. EBP's 
 
 When we debug or analyze compiled C applications, we end up with assembly code. There are two syntaxes for assembly language: Intel and AT&T. We will be focusing on the Intel syntax. The direction of operand for the Intel Syntax is destination, source.
 
+```
 instruction    destination, source
 -----------------------------------
 Example:
 mov    eax, 0x60
 (moves 0x60 into eax)
+```
 
 Then we come to the world of assembly instructions. Contrary to what you might believe, there are actually not too many of them. However, we will only list a few important ones that we will be using here.
 

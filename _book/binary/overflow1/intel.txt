@@ -1,5 +1,0 @@
-instruction    destination, source
------------------------------------
-Example:
-mov    eax, 0x60
-(moves 0x60 into eax)

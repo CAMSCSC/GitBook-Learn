@@ -31,7 +31,7 @@
 
 
         
-    <div class="book"  data-level="6.1" data-basepath="..\.." data-revision="1420609348149">
+    <div class="book"  data-level="6.1" data-basepath="..\.." data-revision="1420609538851">
     
 
 <div class="book-summary">
@@ -481,7 +481,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_359">
+                    <section class="normal" id="section-gitbook_397">
                     
                         <h1 id="overflow-1">Overflow 1</h1>
 <h3 id="follow-along">Follow Along</h3>
@@ -583,11 +583,12 @@ Higher Memory Address
 <p>The aforementioned special registers are crucial when it comes to memory. EBP&#39;s function changes depending on the code. If the executable is not optimized (or the asm code was written by a human), EBP will keep track of the where the stack is at the beginning of a function. Since EBP never changes throughout a function, it can be used as a reference for variables and data stored in the stack. ESP on the other hand, is a highly dynamic register that points to the top of the stack (which again is at a lower memory address). Here is where we answer the question of how new things are added to the stack. If something is added to the stack (which can be accomplished using &quot;PUSH&quot; instruction), the ESP moves back 4 bytes. To allocate space for variables, all the CPU needs to do is tell the ESP register to move back a certain number of bytes rather than shifting everything down. Why? Because registers are much faster and easer to manipulate than RAM.</p>
 <h3 id="assembly-code">Assembly Code</h3>
 <p>When we debug or analyze compiled C applications, we end up with assembly code. There are two syntaxes for assembly language: Intel and AT&amp;T. We will be focusing on the Intel syntax. The direction of operand for the Intel Syntax is destination, source.</p>
-<h2 id="instruction----destination-source">instruction    destination, source</h2>
-<p>Example:
+<pre><code>instruction    destination, source
+-----------------------------------
+Example:
 mov    eax, 0x60
-(moves 0x60 into eax)</p>
-<p>Then we come to the world of assembly instructions. Contrary to what you might believe, there are actually not too many of them. However, we will only list a few important ones that we will be using here.</p>
+(moves 0x60 into eax)
+</code></pre><p>Then we come to the world of assembly instructions. Contrary to what you might believe, there are actually not too many of them. However, we will only list a few important ones that we will be using here.</p>
 <ul>
 <li><strong>push [operand]</strong> - the push stack instruction decrements ESP by 4 and moves the operand to the top of the stack.</li>
 <li><strong>pop [operand]</strong> - the pop stack instruction moves the 4 bytes at the top of the stack into the operand and increments ESP by 4.</li>
