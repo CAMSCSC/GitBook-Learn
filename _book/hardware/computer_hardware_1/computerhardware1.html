@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>SQL 1 | Introduction</title>
+        <title>Computer Hardware 1 | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.0.3">
@@ -18,8 +18,6 @@
     
     
     
-    <link rel="next" href="..\../web/sql2/sql2.html" />
-    
     
 
         
@@ -31,7 +29,7 @@
 
 
         
-    <div class="book"  data-level="2.1" data-basepath="..\.." data-revision="1420599285961">
+    <div class="book"  data-level="4.1" data-basepath="..\.." data-revision="1420599285961">
     
 
 <div class="book-summary">
@@ -102,7 +100,7 @@
                 
     
         
-        <li class="chapter active" data-level="2.1" data-path="web/sql1/sql1.html">
+        <li class="chapter " data-level="2.1" data-path="web/sql1/sql1.html">
             
                 
                     <a href="..\../web/sql1/sql1.html">
@@ -210,7 +208,7 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="hardware/computer_hardware_1/computerhardware1.html">
+        <li class="chapter active" data-level="4.1" data-path="hardware/computer_hardware_1/computerhardware1.html">
             
                 
                     <a href="..\../hardware/computer_hardware_1/computerhardware1.html">
@@ -373,118 +371,52 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_353">
+                    <section class="normal" id="section-gitbook_349">
                     
-                        <h1 id="sql-injections">SQL Injections</h1>
-<h3 id="what-is-sql">What is SQL?</h3>
-<p>SQL or Structured Query Language is a special language used to communicate with a database (usually located on the web server). It is specifically designed to manage data located in a relational database management system (DBMS). Most web servers or database systems utilize SQL databases. Each version of the SQL databases is different and some versions are proprietary. However, all of them contain quite a few inherent commands.</p>
-<h3 id="what-can-sql-do">What can SQL do?</h3>
+                        <h1 id="computer-hardware">Computer Hardware</h1>
+<h3 id="what-is-hardware">What is Hardware?</h3>
+<p>The physical portion of the computer</p>
+<h3 id="examples-of-computer-hardware">Examples of Computer Hardware</h3>
 <ul>
-<li>Retrieve records from a database (articles, posts, comments, etc.)</li>
-<li>Insert records into a database (registration, grades, survey response, etc.)</li>
-<li>Update pre-existing records (change of address, preference change, Le Fail Counter, etc.)</li>
-<li>Create new databases and tables</li>
-<li>Execute malicious queries to DROP all of the tables (it&#39;s very possible)</li>
-<li>Many other useful tasks not mentioned here</li>
+<li>Motherboard – The “baseplate”</li>
+<li>Processor – The &quot;brain&quot;”</li>
+<li>RAM – The quick read/write memory of a computer</li>
+<li>HDD/SSD – The storage of data</li>
+<li>PSU – The power</li>
+<li>Case – The house</li>
+<li>GFX – The “painter”</li>
 </ul>
-<h3 id="basic-structure">Basic Structure</h3>
-<p>A server contains databases. Each database contains tables. Each table contains rows and columns. I hope you know what a table looks like. But to be safe, I&#39;ll show you an example. For the purpose of this lesson, let&#39;s create an imaginary database called <strong>tutorial_1</strong> with a table named <strong>secrets</strong>. The data below shows the structure of the table.</p>
-<table>
-<thead>
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Secret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Karina</td>
-<td>uBarr</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Bob</td>
-<td>chicken</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Mark</td>
-<td>600</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Andy</td>
-<td>windows</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Nicolas</td>
-<td>sqlsql</td>
-</tr>
-</tbody>
-</table>
-<p>As you can see, the table contains three columns and five rows. I explicitly stated this so you do not get confused when I refer to columns or rows later on.</p>
-<h3 id="queries">Queries</h3>
-<p>Queries allow users to tell the DBMS what the desired data is. The DBMS will plan and optimize the search operations, which makes this extremely easy for the users. Note: most queries take under a few milliseconds. The most common and crucial (might be debatable?) statement in SQL is <strong>SELECT</strong>. Examples and general formatting is shown below. Quotes are there for clarification purposes. Database and column names do no need single quotes around them (unless you want case sensitivity). However, text values, especially those after WHERE optional clause do require single quotes.</p>
-<pre><code class="lang-sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> <span class="hljs-string">'column_name(s)'</span> <span class="hljs-keyword">FROM</span> <span class="hljs-string">'table(s)'</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-string">'criterion'</span></span>
-</code></pre>
-<p>Below are some sample queries.</p>
-<pre><code class="lang-sql"><span class="hljs-comment">--Get all columns from the table.</span>
-<span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> secrets
 
-<span class="hljs-comment">--Get only the column name</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets
+<h3 id="the-motherboard">The Motherboard</h3>
+<p><img src="mobo.png" alt="" title="Fig. 1 The Motherboard - filled with ports. Can run you from $75 to $250"></p>
+<p>The motherboard (mobo) is filled with ports that all of the other parts connect to. The motherboard has a chipset which regulates the information between parts. The motherboard contains:</p>
+<ul>
+            <li>DIMM Slots for RAM - Has either 2 or 4 for dual channel support</li>
+            <li>CPU Socket - Drop the CPU in and secure it with a little lever</li>
+            <li>PCI Slots - Slots that are widely used for extra addons such as graphics cards or extra USB 3.0 slots or WiFI adapters</li>
+            <li>ATX Power Connector - A socket for power from the PSU to power the motherboard</li>
+            <li>&quot;Output Row&quot; - Slew of female adapters that range from DVI, VGA, HDMI, USB, Ethernet, Audio Out/In, or PS/2 connectors</li>
+            <li>SATA Slots - Used to connect HDDs and SSDs</li>
+</ul>
 
-<span class="hljs-comment">--Get the name of the person whose ID is 4</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> ID=<span class="hljs-number">4</span>
-
-<span class="hljs-comment">--Whose secret is uBarr?</span>
-<span class="hljs-keyword">SELECT</span> Name <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> Secret=<span class="hljs-string">'uBarr'</span>
-
-<span class="hljs-comment">--Get the ID if the person is Bob or his secret 600</span>
-<span class="hljs-keyword">SELECT</span> ID <span class="hljs-keyword">FROM</span> secrets <span class="hljs-keyword">WHERE</span> Name=<span class="hljs-string">'Bob'</span> <span class="hljs-keyword">AND</span> Secret=<span class="hljs-string">'600'</span>
-<span class="hljs-comment">--Note that 600 is not a number because it is in a text field</span></span>
-</code></pre>
-<h3 id="mysql-and-php">MySQL and PHP</h3>
-<p>The fun part begins here. You can execute queries on an SQL server, but it would be pointless if there was no integration or interaction with website viewers and physical web pages. Here is where PHP and MySQL comes into play. As I mentioned before, there are many versions of SQL databases (Oracle, MySQL, Microsoft SQL Server, PostgreSQL, DB2, SQlite, etc.). However, the one we will be focusing on is MySQL. MySQL is open source and it functions well with PHP. What makes it even better is that the syntax is easy to understand and horrible queries leave a lot of room for exploitations.</p>
-<p>We already looked at basic queries. Now let&#39;s look at how those queries are used with PHP.</p>
-<pre><code class="lang-php"><span class="hljs-preprocessor">&lt;?php</span>
-
-<span class="hljs-comment">//Create a new database</span>
-<span class="hljs-comment">//$database = new mysqli( DB_HOST, DB_USER, DB_PASS, DB_NAME );</span>
-<span class="hljs-variable">$database</span> = <span class="hljs-keyword">new</span> mysqli( <span class="hljs-string">'localhost'</span>, <span class="hljs-string">'DB_USER'</span>, <span class="hljs-string">'DB_PASS'</span>, <span class="hljs-string">'tutorial_1'</span> );
-
-<span class="hljs-comment">//For debugging purposes in case the connection failed</span>
-<span class="hljs-keyword">if</span>( !<span class="hljs-variable">$database</span> )
-{
-    <span class="hljs-keyword">die</span>( <span class="hljs-string">'MySQL: Wrong credentials'</span> );
-}
-
-<span class="hljs-comment">//Execute a query</span>
-<span class="hljs-variable">$result</span> = <span class="hljs-variable">$database</span><span class="hljs-variable">-&gt;query</span>
-(
-    <span class="hljs-string">"SELECT Secret FROM secrets"</span>
-);
-
-<span class="hljs-comment">//For debugging purposes in case the query failed</span>
-<span class="hljs-keyword">if</span>( !<span class="hljs-variable">$result</span> )
-{
-    <span class="hljs-keyword">die</span>( <span class="hljs-string">'MySQL: Syntax error'</span> );
-}
-
-<span class="hljs-comment">//Print out all of the secrets in the order in which they were retrieved</span>
-<span class="hljs-keyword">while</span>( <span class="hljs-variable">$row</span> = mysqli_fetch_assoc( <span class="hljs-variable">$result</span> ) )
-{
-    <span class="hljs-keyword">echo</span>( <span class="hljs-string">"Secrets: "</span> . <span class="hljs-variable">$row</span>[<span class="hljs-string">'Secret'</span>] );
-}
-
-<span class="hljs-preprocessor">?&gt;</span>
-</code></pre>
-<h3 id="further-readings-and-references">Further Readings and References</h3>
-<p>&quot;Back to Basics: Writing SQL Queries&quot; - <a href="http://robots.thoughtbot.com/back-to-basics-sql" target="_blank">http://robots.thoughtbot.com/back-to-basics-sql</a></p>
-<p>&quot;SQL Injection&quot; - <a href="http://www.w3schools.com/sql/sql_injection.asp" target="_blank">http://www.w3schools.com/sql/sql_injection.asp</a></p>
+<h3 id="the-processor">The Processor</h3>
+<p><img src="proc.png" alt="" title="Fig. 2 The Processor - filled with prongs. Can run you from $50 to $1000"></p>
+<p>The central processing unit (CPU) is what computes the 0s and 1s. The clock is the speed in usually GHz or MHz. Most processors are quad-core.</p>
+<h3 id="ram">RAM</h3>
+<p><img src="ram.png" alt="" title="Fig. 3 The Random Access Memory - Costs range from $10 to $2250"></p>
+<p>RAM is used to quickly store data that is used by a running program. RAM comes in 1GB, 2GB, 4GB, 8GB, 16GB and is clocked from 776 MHz to 2400 MHz.</p>
+<h3 id="hard-disc-drive--solid-state-drive">Hard disc drive / Solid state drive</h3>
+<p><img src="ssd.png" alt="" title="Fig. 4 HHD on right SSD on left - Costs range from $50 to $1500"></p>
+<p>HDD/SSD is used to store data on the long term. HDDs use discs to read and write data while SSDs used NAND chips. SSDs have very fast read/write times, but they are more expensive.</p>
+<h3 id="power-supply-unit">Power Supply Unit</h3>
+<p><img src="psw.png" alt="" title="Fig. 5 The PSU - Costs range from $150 to $500"></p>
+<p>The PSU simply gives power to the computer.</p>
+<h3 id="case">Case</h3>
+<p><img src="case.png" alt="" title="Fig. 6 The Case - Costs range from $60 to $300"></p>
+<p>The Case simply gives a home to the computer parts.</p>
+<h3 id="graphics-card">Graphics Card</h3>
+<p><img src="gfx.png" alt="" title="Fig. 7 The Graphics Card - Costs range from $60 to $3000. Easily the most expensive part."></p>
+<p>The graphics card is used to render the screen. It is also used to play jaw dropping games.</p>
 
                     
                     </section>
@@ -495,8 +427,6 @@
         </div>
 
         
-        
-        <a href="..\../web/sql2/sql2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: SQL 2"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

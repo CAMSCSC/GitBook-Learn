@@ -53,20 +53,18 @@ An informal version of Robert’s Rules of Order will be used to conduct club me
 ###Article XII - Amendments
 
 Amendments can be made by the board (majority vote) to any section except specific statements which indicate that they cannot be amended. The sponsoring teacher may overrule any votes by the board and make alterations to the constitution at any time.
-Article XIII - Miscellaneous
 
-1.
-Maintenance of Domain:
+### Article XIII - Miscellaneous
 
-    The domain camscsc.org must be renewed at the end of every one (1) year period. The current domain is set to renew yearly until February 20th, 2017. Hosting provider can be chosen by the Officers. Unless otherwise stated or a hosting service change is required, the billing information as well as the contact information should not be modified. In addition, contact information should be set to the sponsoring teacher’s name and the school’s address / information.
+#### Maintenance of Domain:
 
-1.
-Damage to Server:
+>The domain camscsc.org must be renewed at the end of every one (1) year period. The current domain is set to renew yearly until February 20th, 2017. Hosting provider can be chosen by the Officers. Unless otherwise stated or a hosting service change is required, the billing information as well as the contact information should not be modified. In addition, contact information should be set to the sponsoring teacher’s name and the school’s address / information.
 
-    All attacks done to the CSC server by members of CSC are permitted. However, members shall not violate the hosting service’s terms of service by engaging in attacks such as the DoS without previously obtained permission. It is recommended that the server be backed up periodically in case damage is done.
+#### Damage to Server:
 
-1.
-Participation of Alumni:
+>All attacks done to the CSC server by members of CSC are permitted. However, members shall not violate the hosting service’s terms of service by engaging in attacks such as the DoS without previously obtained permission. It is recommended that the server be backed up periodically in case damage is done.
 
-    Past officers of CSC may assist in any aspect of the club. However, they may not make any direct changes to the CSC server unless given permission to do so by the current officers.
+#### Participation of Alumni:
+
+>Past officers of CSC may assist in any aspect of the club. However, they may not make any direct changes to the CSC server unless given permission to do so by the current officers.
 

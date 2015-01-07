@@ -1,5 +1,5 @@
 #Computer Hardware
-		
+
 ### What is Hardware?
 The physical portion of the computer
 
@@ -13,12 +13,12 @@ The physical portion of the computer
 <li>Case – The house</li>
 <li>GFX – The “painter”</li>
 </ul>
-		
+
 ### The Motherboard
 
 ![](mobo.png "Fig. 1 The Motherboard - filled with ports. Can run you from $75 to $250")
 
-The motherboard (mobo) is filled with ports that all of the other parts connect to. The motherboard has a chipset which regulates the information between parts. The motherboard contains: 
+The motherboard (mobo) is filled with ports that all of the other parts connect to. The motherboard has a chipset which regulates the information between parts. The motherboard contains:
 <ul>
 			<li>DIMM Slots for RAM - Has either 2 or 4 for dual channel support</li>
 			<li>CPU Socket - Drop the CPU in and secure it with a little lever</li>
