@@ -59,7 +59,8 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 			
 </ul>
 		
-### Photoshopping Edges
+### "Photoshopping" Edges
+
 
 ![](shop1.png "Fig. 5 Use the Fuzzy Select Tool")
 
