@@ -1,8 +1,0 @@
-Lower Memory Address
-
-(NOPs)
-(Shellcode)
-(Bs)
-(Overwritten return address)
-
-Higher Memory Address
