@@ -22,8 +22,9 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 
 ![](tools.PNG "Fig. 4 The Toolbox that is included in GIMP")
 
-<p>The tools in the toolbox include:</p>
-		<ul>
+The tools in the toolbox include:
+
+<ul>
 			<li>Rectangle, Ellipse, Free-form Select Tool - Used to select areas</li>
 			<li>Magic Wand/Fuzzy Select Tool - Used to select contiguous areas</li>
 			<li>Color Select Tool - Select by color</li>
@@ -72,7 +73,7 @@ GIMP is talked about in Image Editing 1. The basics will be taught in this tutor
 
 ![](shop5.png "Fig. 9 In a different image, hit CTRL-V to paste it and the move tool to place it")
 
-		<p>To become a photoshop master, all you have to do is learn how to use the select tools, copy, paste and move.</p>
+To become a photoshop master, all you have to do is learn how to use the select tools, copy, paste and move.
 		
 <h3>Further Readings and References</h3>
 	["GIMP - Wiki Books"](http://en.wikibooks.org/wiki/GIMP)
