@@ -11,6 +11,7 @@
    * [Steganography 1](forensics/steg1/steg1.md)
    * [File Carving 1](forensics/filecarving1/filecarving1.md)
    * [File Structure](forensics/filestructure/filestructure.md)
+   * [File System 1](forensics/filesystem1/filesystem1.md)
 * Hardware
    * [Computer Hardware 1](hardware/computer_hardware_1/computerhardware1.md)
 * Software
