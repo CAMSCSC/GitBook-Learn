@@ -14,3 +14,5 @@ Go into Edit Mode, and deselect everything. Hit Shift-Alt and Right Click the "e
 ![](shiftaltrightlclick.PNG)
 
 Next, hit Ctrl-E and select Mark Seam
+
+![](ctrlemarkseam.PNG)
