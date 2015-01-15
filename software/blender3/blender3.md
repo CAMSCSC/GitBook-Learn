@@ -16,3 +16,12 @@ Go into Edit Mode, and deselect everything. Hit Shift-Alt and Right Click the "e
 Next, hit Ctrl-E and select Mark Seam
 
 ![](ctrlemarkseam.PNG)
+
+Go into the UV Edit Mode
+
+![](UVeditmode.PNG)
+
+Select all with A then Ctrl-U to Unwrap
+
+![](actrlu.PNG)
+
