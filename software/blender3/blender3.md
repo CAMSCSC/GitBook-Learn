@@ -9,4 +9,7 @@ Open up Blender, delete the cube and add a sphere
 
 ![](sphere.PNG)
 
-Go into Edit Mode, and deselect everything.
+Go into Edit Mode, and deselect everything. Hit Shift-Alt and Right Click the "equator"
+
+![](shiftaltrightlclick.PNG)
+
