@@ -30,3 +30,10 @@ Next, download <a href="http://upload.wikimedia.org/wikipedia/commons/1/1c/BlueM
 ![](openimage.PNG)
 
 After loading in the image, use G to grab the circles and S to scale (you can hit S then X Y or Z to scale on that specific axis). To select 1 circle, hover and press L.
+
+![](loaded.PNG)
+
+When you are done it should look something like this:
+
+![](grabscale.PNG)
+
