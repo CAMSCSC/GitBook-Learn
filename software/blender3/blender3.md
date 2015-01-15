@@ -26,3 +26,7 @@ Select all with A then Ctrl-U to Unwrap
 ![](actrlu.PNG)
 
 Next, download <a href="http://upload.wikimedia.org/wikipedia/commons/1/1c/BlueMarble-2001-2002.jpg">this</a> picture. Open an image by hitting Alt-O, select the image.
+
+![](openimage.PNG)
+
+After loading in the image, use G to grab the circles and S to scale (you can hit S then X Y or Z to scale on that specific axis). To select 1 circle, hover and press L.
