@@ -57,7 +57,13 @@ In the Mapping Section, select the UV you created
 
 ![](mappinguv.PNG)
 
-Go to modifiers, add a 
+Go to modifiers, add a Subdivision Surface and set views to 2(I modified the camera position and light being used)
+
+![](subdivide.PNG)
+
+Press F12 to render and you have successfully rendered a textured 3D model
+
+![](f12.PNG)
 
 
 
