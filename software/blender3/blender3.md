@@ -37,3 +37,55 @@ When you are done it should look something like this:
 
 ![](grabscale.PNG)
 
+Change into the Default Editing mode
+
+![](Change.PNG)
+
+Select the Render Type to shade Textures
+
+![](rendertype.PNG)
+
+Select the Materials tab in the Properties window.
+
+![](newmaterial.PNG)
+
+Next, go to the Texture tab and create a new texture. Scroll down and select the Blue Marble image from the dropdown.
+
+![](newtexture.PNG)
+
+In the Mapping Section, select the UV you created
+
+![](mappinguv.PNG)
+
+Go to modifiers, add a 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
