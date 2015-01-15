@@ -9,4 +9,4 @@ Open up Blender, delete the cube and add a sphere
 
 ![](sphere.PNG)
 
-Go into Edit Mode
+Go into Edit Mode, and deselect everything.
