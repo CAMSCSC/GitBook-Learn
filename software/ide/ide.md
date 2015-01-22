@@ -22,4 +22,9 @@ Eclipse is written in Java and although it supports plenty of languages, it was 
 
 ### C*#*
 #### MonoDevelop
+![](mono.png)
 MonoDevelop supports many languages, but it is used in Unity3D and Unity3D uses C#. This is a very smart IDE. It is slick and has many smart features such as autocomplete code.
+
+### Python
+#### IDLE
+![](idle.png)
