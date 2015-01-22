@@ -18,3 +18,4 @@ Netbeans is developed by Oracle (they know Java). It can support many languages,
 
 #### Eclipse
 ![](eclipse.png)
+Eclipse is written in Java and although it supports plenty of languages, it was intended to be a Java IDE. 
