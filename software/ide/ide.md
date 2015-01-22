@@ -14,3 +14,4 @@ Microsoft Visual Studio (MSVS) is a modern and proprietary IDE by Microsoft. It 
 ### Java
 #### Netbeans
 ![](netbeans.png)
+Netbeans is developed by Oracle (they know Java). It can support many languages, but it is famous for Java. It is a perfect beginners IDE as it is easy to use and a complete package.
