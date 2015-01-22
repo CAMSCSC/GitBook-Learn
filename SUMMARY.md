@@ -19,6 +19,7 @@
    * [Blender 1](software/blender1/blender1.md)
    * [Blender 2](software/blender2/blender2.md)
    * [Linux 1](software/linux1/linux1.md)
+   * [IDE](software/ide/ide.md)
 * Binary
    * [Overflow 1](binary/overflow1/overflow1.md)
    * [Overflow 2](binary/overflow2/overflow2.md)
