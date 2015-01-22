@@ -10,3 +10,7 @@ Code::Blocks is a great IDE for C++. It is free and open source and is a very ve
 #### Microsoft Visual Studio
 ![](msvs.png)
 Microsoft Visual Studio (MSVS) is a modern and proprietary IDE by Microsoft. It has a slew of features and is home to many nifty tools. It has a sleek look because it runs the latest .NET framework.
+
+### Java
+#### Netbeans
+![](netbeans.png)
