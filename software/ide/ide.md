@@ -28,10 +28,3 @@ MonoDevelop supports many languages, but it is used in Unity3D and Unity3D uses 
 ### Python
 #### IDLE
 IDLE is shipped with Python. It is great for begginersw and is minimalistic. The IDE is not reccomended for advanced users (unless quickly messing around) as it lacks many important features of a functional IDE.
-
-
-
-
-
-
-![](idle.png)
