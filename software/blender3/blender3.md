@@ -21,7 +21,7 @@ Go into the UV Edit Mode
 
 ![](UVeditmode.PNG)
 
-Select all with A then Ctrl-U to Unwrap
+Select all with A then U to Unwrap
 
 ![](actrlu.PNG)
 
