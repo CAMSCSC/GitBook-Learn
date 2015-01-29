@@ -26,6 +26,9 @@ How do you install most games? Through a 3rd party client like Steam or Origin? 
 ##Balance
 Never give the opponent the upper hand and keep your games as fair as possible. People like to develop skills and can do so best in an environment in which the playing field is equal.
 
+##Small Things
+There are small things in games that can brighten a player's day. Easter Eggs, hidden routes, inside jokes, and references to popular culture all are great ways for a player to enjoy themselves in a world you created.
+
 
 
 
