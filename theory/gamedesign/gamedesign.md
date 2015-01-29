@@ -29,7 +29,8 @@ Never give the opponent the upper hand and keep your games as fair as possible. 
 ##Small Things
 There are small things in games that can brighten a player's day. Easter Eggs, hidden routes, inside jokes, and references to popular culture all are great ways for a player to enjoy themselves in a world you created.
 
-
+##Conclusion
+Create games with simplicity and originality in mind. This doesn't mean to redefine a genre (which you can if you want to) but to add your own unique twist to something you love. 
 
 
 
