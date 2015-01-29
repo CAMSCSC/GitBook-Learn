@@ -31,16 +31,3 @@ There are small things in games that can brighten a player's day. Easter Eggs, h
 
 ##Conclusion
 Create games with simplicity and originality in mind. This doesn't mean to redefine a genre (which you can if you want to) but to add your own unique twist to something you love. 
-
-
-
-
-
-
-
-
-
-
-
-
-
