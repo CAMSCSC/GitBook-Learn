@@ -22,3 +22,21 @@ Games are often questioned for their preposterous notions of physics, however th
 
 ##Ease of Use
 How do you install most games? Through a 3rd party client like Steam or Origin? Or do you buy direct and install from an msi? A developer must choose a path to take. If the former is chosen, most will be managed for you. However, the latter route will force you to create your own installer and use your own vendor for selling. But don't worry, much of this is easy to do.
+
+##Balance
+Never give the opponent the upper hand and keep your games as fair as possible. People like to develop skills and can do so best in an environment in which the playing field is equal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
