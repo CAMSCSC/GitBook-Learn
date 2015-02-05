@@ -59,7 +59,7 @@ The shape is created and can be edited by double clicking.
 
 The layout properties can be used to edit the shapes traits. The height affects the height of other devices. The falloff is a gradient that surrounds the shape and the rest is easy not as important, but can lead to interesting terrains. 
 
-
+![](wmlayouttoshaping.PNG)
 
 
 
