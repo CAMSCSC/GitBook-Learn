@@ -56,6 +56,7 @@ To access the layout tools, double click the device. The screen will change to t
 The shape is created and can be edited by double clicking.
 
 ![](wmlayoutpropoerties.PNG)
+
 The layout properties can be used to edit the shapes traits. The height affects the height of other devices. The falloff is a gradient that surrounds the shape and the rest is easy not as important, but can lead to interesting terrains. 
 
 
