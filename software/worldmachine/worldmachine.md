@@ -37,8 +37,8 @@ A 2D view (useful for texturing) with shading only.
 ![](wmgettexture.PNG)
 This setup can be used to show a generated texture and a generated mesh on 3D mockup as well as save both the mesh and texture.
 
-
-
+![](wmoutputtext.PNG)
+The properties for the output of a bitmap or other image file type
 
 
 
