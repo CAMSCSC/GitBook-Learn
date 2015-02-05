@@ -14,4 +14,6 @@ It takes a long time to render high resolution terrain and getting started can b
 This is what the startup page looks like.
 
 ![](wmsettings.png)
-These are world settings which allow you to size your terrain. 
+These are world settings which allow you to size your terrain.
+
+![](wm3dview.PNG)
