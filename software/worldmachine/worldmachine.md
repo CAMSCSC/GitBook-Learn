@@ -47,7 +47,7 @@ The Colorizer uses gradients to texture a mesh based upon height.
 A random (the dice) render which will be used for demonstration purposes.
 
 ![](wmshapingwithlayout.PNG)
-In order to shape our initial Advanced Perlin device, we use a Layout Generator which allows you to build shapes that modify your terrain. 
+In order to shape our initial Advanced Perlin device, we use a Layout Generator which allows you to build shapes that modify your terrain. You can use it as a shaping guide or as a mask for the layer.
 
 
 
