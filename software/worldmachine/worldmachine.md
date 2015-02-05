@@ -46,7 +46,8 @@ The Colorizer uses gradients to texture a mesh based upon height.
 ![](wmrenderrandom.PNG)
 A random (the dice) render which will be used for demonstration purposes.
 
-
+![](wmshapingwithlayout.PNG)
+In order to shape our initial 
 
 
 
