@@ -21,6 +21,7 @@
    * [Blender 3](software/blender3/blender3.md)
    * [Linux 1](software/linux1/linux1.md)
    * [IDE](software/ide/ide.md)
+   * [World Machine](software/worldmachine/worldmachine.md)
 * Binary
    * [Overflow 1](binary/overflow1/overflow1.md)
    * [Overflow 2](binary/overflow2/overflow2.md)
