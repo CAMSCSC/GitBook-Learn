@@ -12,6 +12,8 @@ It takes a long time to render high resolution terrain and getting started can b
 ## Vernacular 
 **Heightmap** - A 2D image that uses shades of black and white to indicate depth
 
+**Mesh** - A 3D object made up of triangles
+
 ## Getting Familiar
 ![](wmstartup.PNG)
 This is what the startup page looks like.
@@ -33,7 +35,7 @@ A 2D view (useful for texturing) with shading only.
 
 ## Tutorial
 ![](wmgettexture.PNG)
-
+This setup can be used to show a texture and a 3D mesh on 
 
 
 
