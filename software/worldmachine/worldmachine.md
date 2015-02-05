@@ -53,7 +53,9 @@ In order to shape our initial Advanced Perlin device, we use a Layout Generator 
 To access the layout tools, double click the device. The screen will change to the layout view. You can select what type of shape you want to create and make sure you do it in the shaded box. 
 
 ![](wmlayout2.PNG)
+The shape is created and can be edited by double clicking.
 
+![](wmlayoutpropoerties.PNG)
 
 
 
