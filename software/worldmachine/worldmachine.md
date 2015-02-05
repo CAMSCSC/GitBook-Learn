@@ -21,3 +21,5 @@ This is the 3D view which allows you to see the terrain mocked up with a texture
 
 ![](wmhands2d.PNG)
 A 2D view (useful for texturing) with heightmap textures and shading.
+
+![](
