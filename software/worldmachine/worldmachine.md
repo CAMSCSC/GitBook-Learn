@@ -44,6 +44,7 @@ The properties for the output of a bitmap or other image file type.
 The Colorizer uses gradients to texture a mesh based upon height.
 
 ![](wmrenderrandom.PNG)
+A random (the dice) render which will be used for demonstration purposes.
 
 
 
