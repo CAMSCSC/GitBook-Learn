@@ -38,7 +38,10 @@ A 2D view (useful for texturing) with shading only.
 This setup can be used to show a generated texture and a generated mesh on 3D mockup as well as save both the mesh and texture.
 
 ![](wmoutputtext.PNG)
-The properties for the output of a bitmap or other image file type
+The properties for the output of a bitmap or other image file type.
+
+![](wmcolorizer.PNG)
+The Colorizer uses gradients to texture a mesh based upon height.
 
 
 
