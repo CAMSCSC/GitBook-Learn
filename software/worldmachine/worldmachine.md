@@ -10,3 +10,8 @@ The [Basic Edition](http://www.world-machine.com/download.php) is free but limit
 It takes a long time to render high resolution terrain and getting started can be tricky, but most elements are included in this lesson.
 
 ## Tutorial
+![](wmstartup.PNG)
+This is what the startup page looks like.
+
+![](wmsettings.png)
+These are world settings which allow you to size your terrain. 
