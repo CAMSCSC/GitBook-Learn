@@ -10,7 +10,7 @@ The [Basic Edition](http://www.world-machine.com/download.php) is free but limit
 It takes a long time to render high resolution terrain and getting started can be tricky, but most elements are included in this lesson.
 
 ## Vernacular 
-
+**Heightmap** - A 2D image that uses shades of black and white to indicate depth
 ## Tutorial
 ![](wmstartup.PNG)
 This is what the startup page looks like.
