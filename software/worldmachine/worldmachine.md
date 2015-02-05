@@ -14,6 +14,9 @@ It takes a long time to render high resolution terrain and getting started can b
 
 **Mesh** - A 3D object made up of triangles
 
+## Devices
+There are many nodes used on the Device View called Devices. These devices can create, modify, calculate, and export different things and it is highly suggested that you take some time playing around with each.
+
 ## Getting Familiar
 ![](wmstartup.PNG)
 This is what the startup page looks like.
