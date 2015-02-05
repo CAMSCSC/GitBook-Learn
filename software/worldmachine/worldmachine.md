@@ -7,3 +7,4 @@ World Machine can be used start to finish to create your terrain or it can be a 
 The [Basic Edition](http://www.world-machine.com/download.php) is free but limits you to a non-commercial licesnse and a 513x513 terrain size. [Standard Edition](http://www.world-machine.com/download.php?page=buy) starts at $99 and [Professional Edition](http://www.world-machine.com/download.php?page=buy) is $249.
 ## What should I expect from this software?
 It takes a long time to render high resolution terrain and getting started can be tricky, but most elements are included in this lesson.
+
