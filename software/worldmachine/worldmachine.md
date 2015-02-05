@@ -50,6 +50,7 @@ A random (the dice) render which will be used for demonstration purposes.
 In order to shape our initial Advanced Perlin device, we use a Layout Generator which allows you to build shapes that modify your terrain. You can use it as a shaping guide or as a mask for the layer.
 
 ![](wmlayout.PNG)
+To access the layout tools, double click the device. The screen will change to the layout view
 
 
 
