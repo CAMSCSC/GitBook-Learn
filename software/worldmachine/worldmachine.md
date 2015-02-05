@@ -9,6 +9,8 @@ The [Basic Edition](http://www.world-machine.com/download.php) is free but limit
 ### What should I expect from this software?
 It takes a long time to render high resolution terrain and getting started can be tricky, but most elements are included in this lesson.
 
+## Vernacular 
+
 ## Tutorial
 ![](wmstartup.PNG)
 This is what the startup page looks like.
