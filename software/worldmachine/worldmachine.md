@@ -12,7 +12,7 @@ It takes a long time to render high resolution terrain and getting started can b
 ## Vernacular 
 **Heightmap** - A 2D image that uses shades of black and white to indicate depth
 
-## Tutorial
+## Getting Familiar
 ![](wmstartup.PNG)
 This is what the startup page looks like.
 
@@ -30,3 +30,36 @@ A 2D view (useful for texturing) with heightmap textures only.
 
 ![](wms2d.PNG)
 A 2D view (useful for texturing) with shading only.
+
+![](wmgettexture.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
