@@ -31,6 +31,7 @@ A 2D view (useful for texturing) with heightmap textures only.
 ![](wms2d.PNG)
 A 2D view (useful for texturing) with shading only.
 
+## Tutorial
 ![](wmgettexture.PNG)
 
 
