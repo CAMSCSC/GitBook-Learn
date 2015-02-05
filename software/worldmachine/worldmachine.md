@@ -63,6 +63,7 @@ The layout properties can be used to edit the shapes traits. The height affects 
 If you connect the Layout Generator to the Shaping Guide on the Perlin Generator, you can see the result.
 
 ![](wmlayouttomask.PNG)
+If you connect the Layout Generator to the Mask on the Perlin Generator, you can see the result.
 
 
 
