@@ -35,7 +35,7 @@ A 2D view (useful for texturing) with shading only.
 
 ## Tutorial
 ![](wmgettexture.PNG)
-This setup can be used to show a texture and a 3D mesh on 
+This setup can be used to show a generated texture and a generated mesh on 3D mockup as well as save both the mesh and texture.
 
 
 
