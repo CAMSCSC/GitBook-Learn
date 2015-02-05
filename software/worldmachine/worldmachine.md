@@ -65,7 +65,8 @@ If you connect the Layout Generator to the Shaping Guide on the Perlin Generator
 ![](wmlayouttomask.PNG)
 If you connect the Layout Generator to the Mask on the Perlin Generator, you can see the result.
 
-
+![](wmheightoutput.PNG)
+If you are exporting your map to Unity3D or other software, use the height output and the most popular format is usually Raw16 or PGM.
 
 
 
