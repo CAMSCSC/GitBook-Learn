@@ -43,6 +43,8 @@ The properties for the output of a bitmap or other image file type.
 ![](wmcolorizer.PNG)
 The Colorizer uses gradients to texture a mesh based upon height.
 
+![](wmrenderrandom.PNG)
+
 
 
 
