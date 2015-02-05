@@ -18,3 +18,5 @@ These are world settings which allow you to size your terrain.
 
 ![](wm3dview.PNG)
 This is the 3D view which allows you to see the terrain mocked up with a texture and colors as well as shading (all of which can be toggled).
+
+![](wmhands2d.PNG)
