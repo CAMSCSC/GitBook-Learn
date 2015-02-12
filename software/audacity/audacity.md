@@ -12,12 +12,12 @@ It is packed with features such as:
 
 ![](start.PNG)
 
-The startup of the program yields an old yet easy to use interface.
+The startup of the program yields an old yet easy to use interface
 
 ![](open.PNG)
 
-Opening an audio track is easy and familiar.
+Opening an audio track is easy and familiar
 
 ![](opened.PNG)
 
-Trophies by Drake in Audacity.
+Trophies by Drake in Audacity
