@@ -11,3 +11,5 @@ It is packed with features such as:
 * Generation of sounds
 
 ![](start.PNG)
+
+The startup of the program.
