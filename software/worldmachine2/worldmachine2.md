@@ -47,7 +47,7 @@ Edited after using GIMP and the generated maps
 Use the masks from the Coastal Overlay to replace the colors of the Sand, Grass, or Rock.
 
 ![](mask.PNG)
-
+Add the sand mask as a new layer and add a layer mask to it.
 
 
 
