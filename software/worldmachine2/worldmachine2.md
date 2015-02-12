@@ -26,3 +26,6 @@ Edit all the output files using GIMP.
 ![](cm.PNG)
 
 The standard Colormap will be the base texture that will be built upon.
+
+![](overlayopacity.PNG)
+Select the Light Map Ambient Occlusion and paste it as a new layer. Then, select the Mode as Overlay and the Opacity to 50%.
