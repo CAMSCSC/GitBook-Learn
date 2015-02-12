@@ -42,7 +42,7 @@ Untouched from the Coastal Overlay
 
 Edited after using GIMP and the generated maps
 
-
+### Changing colors with Masks
 
 
 
