@@ -20,6 +20,6 @@ Opening an audio track is easy and familiar
 
 ![](opened.PNG)
 
-Trophies by Drake in Audacity
+Trophies by Drake in Audacity which can be edited by scrubbing and highlighting and cutting or pasting however one wants. 
 
 ![](record.PNG)
