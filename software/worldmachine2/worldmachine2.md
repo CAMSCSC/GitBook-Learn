@@ -49,5 +49,32 @@ Use the masks from the Coastal Overlay to replace the colors of the Sand, Grass,
 ![](mask.PNG)
 Add the sand mask as a new layer and add a layer mask to it.
 
+![](invert.PNG)
+Invert the colors and choose a new color to use.
+
+![](dragcolor.PNG)
+
+Drag the desired color into the first box of the layer. The color will change.
+
+![](dragdown.PNG)
+
+Drag the layer down in the hierarchy so it blends under the other effects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
