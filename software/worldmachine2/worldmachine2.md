@@ -36,5 +36,16 @@ For the deposition and wear map, use Addition and a lower opacity.
 
 ![](before.PNG)
 
+Untouched from the Coastal Overlay
+
 ![](after.PNG)
+
+Edited after using GIMP and the generated maps
+
+
+
+
+
+
+
 
