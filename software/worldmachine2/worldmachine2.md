@@ -18,3 +18,5 @@ This is what the macro looks like when you enter the macro.
 ![](final.PNG)
 
 Add Bitmap and Heightmap file outputs. Use PNGs and name according to what it is. (Note: Check off output on every build to quickly create the files by just building)
+
+![](edit.PNG)
