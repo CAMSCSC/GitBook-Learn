@@ -10,3 +10,4 @@ It is packed with features such as:
 * Dozens of effects for audio such as "Echo" and "Wahwah"
 * Generation of sounds
 
+![](start.PNG)
