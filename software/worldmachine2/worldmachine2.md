@@ -58,7 +58,7 @@ Drag the desired color into the first box of the layer. The color will change.
 
 ![](dragdown.PNG)
 
-Drag the layer down in the hierarchy so it blends under the other effects.
+Drag the layer down in the hierarchy so it blends under the other effects. Do the same process of making a mask with the rock layer.
 
 
 
