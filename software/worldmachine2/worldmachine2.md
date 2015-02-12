@@ -13,7 +13,7 @@ Use the Classic WM Erosion setting for best results
 Use the [Coastal Overlay Macro](http://www.world-machine.com/library/index.php?entry=47&focus=1) to create a texure. (Note: [This](![](software/worldmachine2/CoastalOverlay.dev) macro has been edited to output many types of maps)
 
 ![](co.PNG)
-This is what the macro looks like on the "inside".
+This is what the macro looks like on the "inside."
 
 ![](final.PNG)
 
