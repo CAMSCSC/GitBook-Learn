@@ -15,3 +15,8 @@ It is packed with features such as:
 The startup of the program yields an old yet easy to use interface.
 
 ![](open.PNG)
+
+Opening an audio track is easy and familiar.
+
+![](opened.PNG)
+
