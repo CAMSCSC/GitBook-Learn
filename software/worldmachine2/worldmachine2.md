@@ -4,4 +4,7 @@ Terrains are easy to make in WM, but to give them a texture is slightly more dif
 
 ![](wmstartup.PNG)
 
-Open up WM and remove the terrace and add Erosion.
+Open up WM and remove the terrace and add Erosion
+
+![](erosion.PNG)
+Use the Classic WM Erosion setting for best results
