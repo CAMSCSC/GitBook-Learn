@@ -32,3 +32,9 @@ Select the Light Map Ambient Occlusion and paste it as a new layer. Then, select
 
 ![](depo.PNG)
 
+For the deposition and wear map, use Addition and a lower opacity.
+
+![](before.PNG)
+
+![](after.PNG)
+
