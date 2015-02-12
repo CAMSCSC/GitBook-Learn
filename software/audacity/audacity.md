@@ -5,4 +5,8 @@ Audacity is free open source software (FOSS) which is used for both editing and 
 ##What can it do?
 It is packed with features such as:
 * Cut and paste audio editing
-* 
+* Audio Analysis
+* Recording from microphone
+* Dozens of effects for audio such as "Echo" and "Wahwah"
+* Generation of sounds
+
