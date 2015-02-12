@@ -20,3 +20,4 @@ Opening an audio track is easy and familiar.
 
 ![](opened.PNG)
 
+Trophies by Drake in Audacity.
