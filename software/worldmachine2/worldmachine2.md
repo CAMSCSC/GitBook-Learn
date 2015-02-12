@@ -21,4 +21,8 @@ Add Bitmap and Heightmap file outputs. Use PNGs and name according to what it is
 
 ![](edit.PNG)
 
-Edit all the output files using GIMP
+Edit all the output files using GIMP.
+
+![](cm.PNG)
+
+The standard Colormap will be the base texture that will be built upon.
