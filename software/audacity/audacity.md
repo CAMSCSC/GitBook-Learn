@@ -13,3 +13,5 @@ It is packed with features such as:
 ![](start.PNG)
 
 The startup of the program yields an old yet easy to use interface.
+
+![](open.PNG)
