@@ -21,7 +21,8 @@
    * [Blender 3](software/blender3/blender3.md)
    * [Linux 1](software/linux1/linux1.md)
    * [IDE](software/ide/ide.md)
-   * [World Machine](software/worldmachine/worldmachine.md)
+   * [World Machine 1](software/worldmachine1/worldmachine1.md)
+   * [World Machine 2](software/worldmachine2/worldmachine2.md)
    * [Audacity](software/audacity/audacity.md)
 * Binary
    * [Overflow 1](binary/overflow1/overflow1.md)
