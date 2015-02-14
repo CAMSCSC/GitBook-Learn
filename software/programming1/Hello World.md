@@ -74,7 +74,9 @@ echo "Hello, World!"
 </html>
 ```
 
-And for Alastair, **BF**
+### Now for some more fun languages...
+
+**BF**
 ```bf
 +++++ +++++             initialize counter (cell #0) to 10
 [                       use loop to set the next four cells to 70/100/30/10/40
@@ -100,6 +102,92 @@ And for Alastair, **BF**
 ----- --- .             print 'd'
 > + .                   print '!'
 > .                     print '\n'
+```
+
+**Arnold C**
+```arnoldc
+IT'S SHOWTIME
+TALK TO THE HAND "Hello World"
+YOU HAVE BEEN TERMINATED
+```
+
+**Assembly**
+```assembly
+.or $300
+main    ldy #$00
+.1      lda str,y
+        beq .2
+        jsr $fded ; ROM routine, COUT, y is preserved
+        iny
+        bne .1
+.2      rts
+str     .as "HELLO WORLD"
+        .hs 0D00
+```
+
+**Casio BASIC**
+```casiobasic
+"HELLO, WORLD!"
+```
+
+**LOLCODE**
+```lolcode
+HAI
+CAN HAS STDIO?
+VISIBLE "HAI WORLD!"
+KTHXBYE
+```
+
+**MySQL**
+```mysql
+DELIMITER $$
+CREATE FUNCTION hello_world() RETURNS TEXT COMMENT 'Hello World'
+BEGIN
+  RETURN 'Hello World';
+END;
+$$
+DELIMITER ;
+ 
+SELECT hello_world();
+```
+
+**Visual Basic**
+```visualbasic
+MsgBox "Hello, world!"
+```
+
+***WhiteSpace***
+```whitespace
+                  
+      
+                           
+      
+                               
+      
+                               
+      
+                                           
+      
+                        
+      
+                  
+      
+                                           
+      
+                                           
+      
+                                 
+      
+                               
+      
+                           
+      
+                        
+      
+  
+
+
+
 ```
 
 ### Source
