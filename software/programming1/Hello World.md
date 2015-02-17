@@ -190,5 +190,10 @@ MsgBox "Hello, world!"
 
 ```
 
+***Emoticon***
+'''emoticon
+hello world :-Q S:-P :-Q
+'''
+
 ### Source
 Wikipedia: http://en.wikipedia.org/wiki/List_of_Hello_world_program_examples
