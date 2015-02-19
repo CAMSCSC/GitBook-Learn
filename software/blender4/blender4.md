@@ -15,3 +15,5 @@ Add content, use Add -> [Media Type].
  Use the previously rendered animation of the humanoid.
 
 ![](imported.PNG)
+
+###Modifying Clips
