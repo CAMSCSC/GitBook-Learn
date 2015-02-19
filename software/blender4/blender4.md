@@ -48,6 +48,10 @@ Strips can be duplicated and layered on each other with various blend types. The
 
 ###Exporting Video
 
+![](edittime.PNG)
+
+Edit the end of the video to match the end of your clips.
+
 
 
 
