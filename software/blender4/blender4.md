@@ -67,11 +67,3 @@ Add all of the rendered images from the tmp folder. Specify the start and end fr
 ![](save.PNG)
 
 Change a window to properties and specify the output for rendering. Hit the animation button and the movie will render.
-
-
-
-
-
-
-
-
