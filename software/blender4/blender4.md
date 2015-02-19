@@ -19,3 +19,6 @@ Add content, use Add -> [Media Type].
 ###Modifying Clips
 
 ![](edit.PNG)
+
+The properties on the left allow you to edit "strips" in various ways.
+
