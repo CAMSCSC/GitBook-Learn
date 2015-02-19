@@ -35,10 +35,12 @@ The Filter adds various filters.
 The Proxy/Timecode offers various meta options.
 
 ![](modifiers.PNG)
+
 ![](modifiersoptions.PNG)
+
 ![](colorbalance.PNG)
 
-
+The Modifiers allows for various edits to be made on the strip.
 
 
 
