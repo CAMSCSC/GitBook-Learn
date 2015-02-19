@@ -23,3 +23,13 @@ Add content, use Add -> [Media Type].
 The properties on the left allow you to edit "strips" in various ways.
 
 ![](input.PNG)
+
+The Strip Input allows you to edit the import of the media used.
+
+![](filter.PNG)
+
+The Filter adds various filters.
+
+![](options.PNG)
+
+The Proxy/Timecode offers various meta options.
