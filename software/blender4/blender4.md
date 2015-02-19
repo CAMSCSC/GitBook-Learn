@@ -35,8 +35,8 @@ The Filter adds various filters.
 The Proxy/Timecode offers various meta options.
 
 ![](modifiers.PNG)
-![](modifiers.PNG)
-![](modifiers.PNG)
+![](modifiersoptions.PNG)
+![](colorbalance.PNG)
 
 
 
