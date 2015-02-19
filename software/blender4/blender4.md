@@ -42,8 +42,9 @@ The Proxy/Timecode offers various meta options.
 
 The Modifiers allows for various edits to be made on the strip.
 
-###
+![](multiple.PNG)
 
+Strips can be duplicated and layered on each other with various blend types. The videos can 
 
 
 
