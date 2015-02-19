@@ -22,3 +22,4 @@ Add content, use Add -> [Media Type].
 
 The properties on the left allow you to edit "strips" in various ways.
 
+![](input.PNG)
