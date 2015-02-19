@@ -44,7 +44,7 @@ The Modifiers allows for various edits to be made on the strip.
 
 ![](multiple.PNG)
 
-Strips can be duplicated and layered on each other with various blend types. The strips can be cut or shortened or lengthened in various ways. 
+Strips can be duplicated and layered on each other with various blend types. The strips can be cut or shortened or lengthened in numerous ways. 
 
 
 
