@@ -17,3 +17,5 @@ Add content, use Add -> [Media Type].
 ![](imported.PNG)
 
 ###Modifying Clips
+
+![](edit.PNG)
