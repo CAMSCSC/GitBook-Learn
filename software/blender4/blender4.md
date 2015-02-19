@@ -8,4 +8,10 @@ Start up Blender and use the Video Editing preset.
 
 ![](addmovie.PNG)
 
-Add content, use Add -> [Media Type]. Use the previously rendered animation of the humanoid here.
+Add content, use Add -> [Media Type].
+
+![](vid.PNG)
+
+ Use the previously rendered animation of the humanoid.
+
+![](imported.PNG)
