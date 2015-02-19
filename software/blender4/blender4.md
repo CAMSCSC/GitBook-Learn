@@ -52,6 +52,10 @@ Strips can be duplicated and layered on each other with various blend types. The
 
 Edit the end of the video to match the end of your clips.
 
+![](render.PNG)
+
+Render the video by pressing the Camera Render button.
+
 
 
 
