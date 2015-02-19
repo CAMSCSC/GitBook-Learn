@@ -20,6 +20,7 @@
    * [Blender 1](software/blender1/blender1.md)
    * [Blender 2](software/blender2/blender2.md)
    * [Blender 3](software/blender3/blender3.md)
+   * [Blender 4](software/blender4/blender4.md)
    * [Linux 1](software/linux1/linux1.md)
    * [IDE](software/ide/ide.md)
    * [World Machine 1](software/worldmachine1/worldmachine1.md)
