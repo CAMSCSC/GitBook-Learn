@@ -85,5 +85,7 @@ Line 36: Tell us what the password is.
 Let’s run this.
 
 ![](run.png "Running the code")
+
 Oh look at this, this must be our token.
+
 ![](solved.png "Submit the token!")
