@@ -11,4 +11,5 @@ Now that we have established that it is able to be opened, we are looking for a 
 So, there is hidden data there. Let’s try copy pasting the line and see what we get.
 
  Password: MAwj!LmFHLjF
+ 
 Well, there is the password.
