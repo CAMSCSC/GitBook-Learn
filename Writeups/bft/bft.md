@@ -1,4 +1,4 @@
-### CTF Writeup: Brute Force Time
+# CTF Writeup: Brute Force Time
 ![](initial.png "The website you are provided with")
 
 In Brute Force Time, you are sent to a page with just a text box and a submit button. Obviously, you need to find the right password, or in this case token, to get the flag.

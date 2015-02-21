@@ -1,4 +1,4 @@
-### CTF Writeup: CSAW 1
+# CTF Writeup: CSAW 1
 
 In CSAW 1, you are provided with a [manual.pdf](manual) (a pdf file) and are told to find a password. So, the first thing to do is try to open it.
 
