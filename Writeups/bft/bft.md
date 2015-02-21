@@ -53,20 +53,35 @@ print(z)
 ```
 Explanation: 
 Lines 1-2: import requests and base64. This allows us to do decryption and send requests to the site. 
+
 Line 4: Specify the url that we are attacking…I mean sending requests to.
+
 Lines 5-16: Initialize variables. These will come in handy later.
+
 Line 17: Set up a loop. This tells us how many letters we will check up to. As the password is most likely not longer than 20 characters, we will use 20. 
+
 Line 18: Set up another loop. This loop is the loop that goes through the alphabet.
+
 Line 19: This only runs when x is true. X will be false after the password is complete.
+
 Line 20-21: Set x to false after checking all letters and none work (therefore the password is done)
+
 Line 23: Send the request. Make sure debug is 1 so we are getting cpu start and end.
+
 Line 24-25: Get the values of cpu start and end.
+
 Line 26-29: Decode the start and end values. We will also multiply these by 10000 so we can operate in integers.
+
 Line 30: Get the difference. 
+
 Line 32: Check if the difference is of a significant amount.
+
 Line 33: Add the character onto z (the password).
+
 Line 34: Set the current time difference to whatever the last difference was.
+
 Line 36: Tell us what the password is.
+
 Let’s run this.
 
 ![](run.png "Running the code")
