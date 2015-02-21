@@ -31,3 +31,7 @@
    * [Overflow 2](binary/overflow2/overflow2.md)
 * Theory
    * [Game Design](theory/gamedesign/gamedesign.md)
+* Write Ups
+   * [Summary] (Writeups/Overview.md)
+   * [CSAW 1] (Writeups/CSAW 1/CSAW 1.md)
+   * [QR Encryption] (Writeups/qr encryption/qr encryption.md)
