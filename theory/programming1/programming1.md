@@ -9,3 +9,6 @@ Here is a list of resources to help you learn how to code:
 * [Stack Overflow](http://stackoverflow.com/)
 * [Khan Academy](https://www.khanacademy.org/)
 * [Code.org](http://code.org/)
+* [Scratch](http://scratch.mit.edu/)
+* [edX](https://www.edx.org/)
+* [Coursera](https://www.coursera.org/)
