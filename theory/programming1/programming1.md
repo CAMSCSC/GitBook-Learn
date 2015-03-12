@@ -12,3 +12,5 @@ Here is a list of resources to help you learn how to code:
 * [Scratch](http://scratch.mit.edu/)
 * [edX](https://www.edx.org/)
 * [Coursera](https://www.coursera.org/)
+
+There are many many more sources that a quick google search can yield as well.
