@@ -7,3 +7,4 @@ Here is a list of resources to help you learn how to code:
 * [Code Academy](http://www.codecademy.com/)
 * [W3 Schools](http://www.w3schools.com/)
 * [Stack Overflow](http://stackoverflow.com/)
+* [Khan Academy](https://www.khanacademy.org/)
