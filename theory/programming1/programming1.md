@@ -8,3 +8,4 @@ Here is a list of resources to help you learn how to code:
 * [W3 Schools](http://www.w3schools.com/)
 * [Stack Overflow](http://stackoverflow.com/)
 * [Khan Academy](https://www.khanacademy.org/)
+* [Code.org](http://code.org/)
