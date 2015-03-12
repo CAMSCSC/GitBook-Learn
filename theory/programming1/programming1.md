@@ -16,3 +16,7 @@ Here is a list of resources to help you learn how to code:
 There are many many more sources that a quick google search can yield as well.
 ##Programming: When?
 Start slow, 30 minutes to an hour a day, then over time you will be able to start your own projects rather than do lessons.
+##Programming: What?
+Literally anything.
+##Programming: Who?
+YOU!
