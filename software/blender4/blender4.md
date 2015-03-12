@@ -52,18 +52,6 @@ Strips can be duplicated and layered on each other with various blend types. The
 
 Edit the end of the video to match the end of your clips.
 
-![](render.PNG)
-
-Render the video by pressing the Camera Render button.
-
-![](addimage.PNG)
-
-After rendering, delete the strips and Add -> Image
-
-![](tmp.PNG)
-
-Add all of the rendered images from the tmp folder. Specify the start and end frame.
-
 ![](save.PNG)
 
 Change a window to properties and specify the output for rendering. Hit the animation button and the movie will render.
