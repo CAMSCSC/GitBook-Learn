@@ -10,4 +10,4 @@ Languages endoresed by CAMSCSC include:
 * HTML/CSS
 
 ##Choose an IDE
-![](software/ide/ide.md)
+![IDE](software/ide/ide.md)
