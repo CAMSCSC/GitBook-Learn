@@ -1,6 +1,6 @@
 #Programming 2
 ##Choose a language
-Languages endoresed by CAMSCSC include:
+Languages endorsed by CAMSCSC include:
 * C
 * C++
 * Python
@@ -18,3 +18,5 @@ There are certain things to do in order to make your code coherent and readable 
 * Comment your code
 
 Remember your ABC's!
+##Correctly Code
+Use a loop or nested loops instead of Copy/Paste and be sure to optimize your code whenever possible.
