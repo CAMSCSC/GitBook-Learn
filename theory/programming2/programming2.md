@@ -10,4 +10,9 @@ Languages endoresed by CAMSCSC include:
 * HTML/CSS
 
 ##Choose an IDE
-![IDE](software/ide/ide.md)
+Check out this: [IDE's](software/ide/ide.md)
+##Practice Proper Coding
+There are certain things to do in order to make your code coherent and readable by other humans:
+* Accurately name your variables
+* Comment your code
+* Indent and format your code
