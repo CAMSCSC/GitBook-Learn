@@ -14,5 +14,7 @@ Check out this: [IDE's](software/ide/ide.md)
 ##Practice Proper Coding
 There are certain things to do in order to make your code coherent and readable by other humans:
 * Accurately name your variables
+* Beautify and format your code
 * Comment your code
-* Indent and format your code
+
+Remember your ABC's!
