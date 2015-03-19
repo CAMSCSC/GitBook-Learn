@@ -32,3 +32,4 @@
 * Theory
    * [Game Design](theory/gamedesign/gamedesign.md)
    * [Programming 1](theory/programming1/programming1.md)
+   * [Programming 2](theory/programming2/programming2.md)
