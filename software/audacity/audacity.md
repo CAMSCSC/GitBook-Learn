@@ -24,3 +24,6 @@ Trophies by Drake in Audacity which can be edited by scrubbing and highlighting 
 ![](record.PNG)
 
 Recording with Audacity is easy and you can quickly edit the audio.
+
+### Further Readings and References
+"CAMSCSC LEARN" - href to learn
