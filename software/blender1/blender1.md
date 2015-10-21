@@ -1,25 +1,25 @@
 # Introduction to Blender
 ![](blendlogo.png "Fig. 1 The Blender Logo")
 <h3>What is Blender?</h3>
-<p>Taken directly from the site "Blender is a free and open source 3D animation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, even video editing and game creation." To say the least, Blender is a highly advanced program.<p>
+<p>Taken directly from the site "Blender is a free and open source 3D animation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, even video editing and game creation."<p>
 <h3>What can Blender do?</h3>
-		<ul>
-			<li>Create 3D models</li>
-			<li>Create armatures and animations</li>
-			<li>Render images and animations</li>
-			<li>Create simulations</li>
-			<li>Can be used as a game engine</li>
-			<li>Image editor</li>
-			<li>Video editor</li>
-			<li>Text editor</li>
-		</ul>
+	<ul>
+		<li>Create 3D models</li>
+		<li>Create armatures and animations</li>
+		<li>Render images and animations</li>
+		<li>Create simulations</li>
+		<li>Game engine</li>
+		<li>Image editor</li>
+		<li>Video editor</li>
+		<li>Text editor</li>
+	</ul>
 
-		<h3>Why Blender?</h3>
-		<p>Blender is free!</p>
+<h3>Why Blender?</h3>
+<p>Blender is free!</p>
 
 ![](blendui.PNG "Fig. 2 The Blender interface can be quite confusing at first")
 
-<p>The Blender UI is customizable due to the fact that you can create many windows that display different things. Figure 2 shows a 3D view first and foremost, on the bottom a timeline, and on the right the outliner and properties. The different windows will be explained separately.</p>
+<p>The Blender user interface seems cluttered because you can configure it to your liking. Figure 2 shows a 3D view in the middle, on the bottom a timeline, and on the right the outliner and properties.</p>
 
 ### 3D View
 ![](blendui3dview.png "Fig. 3 The 3D view is your main workspace")
@@ -45,7 +45,7 @@
 ### Animation Timeline
 ![](blenduianim.png "Fig. 6 The Animation Timeline is used to add frames of animations")
 
-To make animations in Blender is a simple task because of the automatic keyframe insertion feature which will calculate motions for you with only a few simple frames.
+Animation in Blender is fairly easy due to automatic keyframe insertion which will automatically calculate motions in between two positions. 
 
 ### The Outline
 ![](blenduioutline.png "Fig. 7 The outline gives you a hierarchical view of the scene")
@@ -74,4 +74,7 @@ Hotkeys make life easier, here are important ones
 	<li>Shift-A – Add an object </li>
 	<li>Ctrl-P – Parent an object</li>
 	<li>I - Insert keyframe</li>
-		</ul>
+</ul>
+### Further Readings and References
+"Blender" - [http://www.blender.org/](http://www.blender.org/)
+"Blender Guru" - [http://www.blenderguru.com/](http://www.blenderguru.com/)
