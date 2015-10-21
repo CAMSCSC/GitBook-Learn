@@ -1,5 +1,6 @@
 #Blender 2
-## Creating a Humanoid
+
+### Creating a Humanoid
 ![](start.PNG "Fig. 1 The Start Screen")
 
 Press '1' then '5'
