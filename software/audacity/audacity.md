@@ -1,9 +1,8 @@
 # Audacity
 ## What is it?
-Audacity is free open source software (FOSS) which is used for both editing and recording audio.
+Audacity is free open source software (FOSS) which you can use to edit and record audio.
 
-## What can it do?
-It is packed with features such as:
+## What can you do with it?
 * Cut and paste audio editing
 * Audio Analysis
 * Recording from microphone
@@ -12,16 +11,16 @@ It is packed with features such as:
 
 ![](start.PNG)
 
-The startup of the program yields an old yet easy to use interface.
+Audacity has an old yet easy to use interface.
 
 ![](open.PNG)
 
-Opening an audio track is easy and familiar.
+Opening an audio track is easy.
 
 ![](opened.PNG)
 
-Trophies by Drake in Audacity which can be edited by scrubbing and highlighting and cutting or pasting however one wants. 
+Trophies by Drake in Audacity which can be edited by scrubbing and highlighting and cutting or pasting however you want. 
 
 ![](record.PNG)
 
-Recording with Audacity is easy and allows for quick editing.
+Recording with Audacity is easy and you can quickly edit the audio.

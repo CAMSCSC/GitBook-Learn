@@ -19,7 +19,7 @@
 
 ![](blendui.PNG "Fig. 2 The Blender interface can be quite confusing at first")
 
-<p>The Blender UI is highly customizable due to the fact that you can create many windows that display different things. Figure 2 shows a 3D view first and foremost, on the bottom a timeline, and on the right the outliner and properties. The different windows will be explained separately.</p>
+<p>The Blender UI is customizable due to the fact that you can create many windows that display different things. Figure 2 shows a 3D view first and foremost, on the bottom a timeline, and on the right the outliner and properties. The different windows will be explained separately.</p>
 
 ### 3D View
 ![](blendui3dview.png "Fig. 3 The 3D view is your main workspace")
