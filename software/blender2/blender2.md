@@ -140,3 +140,7 @@ Finally, save the image/texture using F3
 
 From here, import the image into your favorite image editor and texture the UV. Reimport
 the photo as a material and enter the Cycles Render to select the nodes. You will be able to see your model textured.
+
+### Further Readings and References
+"Blender" - [http://www.blender.org/](http://www.blender.org/)
+"Blender Guru" - [http://www.blenderguru.com/](http://www.blenderguru.com/)
