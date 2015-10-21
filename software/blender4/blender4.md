@@ -55,3 +55,6 @@ Edit the end of the video to match the end of your clips.
 ![](save.PNG)
 
 Change a window to properties and specify the output for rendering. Hit the animation button and the movie will render.
+### Further Readings and References
+"Blender" - [http://www.blender.org/](http://www.blender.org/)
+"Blender Guru" - [http://www.blenderguru.com/](http://www.blenderguru.com/)
