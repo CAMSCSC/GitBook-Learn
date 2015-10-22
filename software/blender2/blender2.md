@@ -55,7 +55,7 @@ Press Tab and apply the modifiers
 
 ![](ApplyObjectMode.PNG "Fig. 14 The Completed Humanoid")
 
-## Animation
+### Animation
 
 ![](xray.PNG "Fig. 15 X-Rayed Humanoid")
 
@@ -103,7 +103,7 @@ Paste the frame 10 seconds after and crop the animation to 40 frames long.
 
 ![](pasteandcrop.PNG "Fig. 26 The final animation")
 
-## Animation Rendering
+### Animation Rendering
 
 ![](camerarender.PNG "Fig. 27 The camera view")
 
