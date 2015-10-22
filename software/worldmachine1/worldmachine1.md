@@ -3,7 +3,7 @@
 ### What is World Machine?
 You can use World Machine to create terrains for video games, videos, renders, or anything that needs a detailed terrain.
 ### How can I use World Machine?
-You can use World Machine from start to finish to create your terrain or it can be a middle-man as it has an excellent erosion features which are highly detailed.
+You can use World Machine from start to finish to create your terrain or it can be a middle-man as it has an excellent erosion feature.
 ### How much does it cost?
 The [Basic Edition](http://www.world-machine.com/download.php) is free but limits you to a non-commercial licesnse and a 513x513 terrain size. [Standard Edition](http://www.world-machine.com/download.php?page=buy) starts at $99 and [Professional Edition](http://www.world-machine.com/download.php?page=buy) is $249.
 ### What should I expect from this software?
