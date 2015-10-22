@@ -117,30 +117,6 @@ The render result will pop up, switch to 3D view.
 
 ![](3dview.PNG "Fig. 30 3D View")
 
-## UV Wrapping
-###### UV Wrapping is a method of creating a map of the model and texturing it.
-
-![](uveditmode.PNG "Fig. 31 Entering UV Edit Mode")
-
-Press 'A' to select All or you can carefully select a smart path to unwrap. Then Mark Seam
-
-![](markseam.PNG "Fig. 32 Selecting everything is poor choice for unwrapping a UV")
-
-Select Unwrap
-
-![](unwrap.PNG "Fig. 33 Unwrapping the UV")
-
-Save the UV to a new image
-
-![](saveuv.PNG "Fig. 34 Saving the UV to a new image")
-
-Finally, save the image/texture using F3
-
-![](saveimageandtexture.PNG "Fig. 35 Export UV image")
-
-From here, import the image into your favorite image editor and texture the UV. Reimport
-the photo as a material and enter the Cycles Render to select the nodes. You will be able to see your model textured.
-
 ### Further Readings and References
 "Blender" - [http://www.blender.org/](http://www.blender.org/)
 "Blender Guru" - [http://www.blenderguru.com/](http://www.blenderguru.com/)
