@@ -12,7 +12,7 @@ Lets start with some basic things a good game has:
 * Small Things - It is the little things that make some games huge and others not so much
 
 ##Audio
-Games today have specially designed audio pipelines (Wwise) to ensure that 3D environments accurately distort the sounds created. 3D sounds allow for a user to identify the location of a sound and in turn they become more grounded in a game.
+Games have specially designed audio capabilities (Wwise) to let 3D environments accurately distort sounds. 3D sounds allow for a user to identify the location of a sound and in turn they become more grounded in a game.
 
 ##Video
 Games today look good, *REALLY* good. It is hard for many indie developers to match the AAA quality and therefore the search for their own unique style of graphics which further enhance the personality of a game.
