@@ -16,11 +16,11 @@ Use the [Coastal Overlay Macro](http://www.world-machine.com/library/index.php?e
 
 ![](co.PNG)
 
-This is what the macro looks like when you enter the macro.
+This is what the macro looks like when you enter it.
 
 ![](final.PNG)
 
-Add Bitmap and Heightmap file outputs. Use PNGs and name according to what it is. (Note: Check off output on every build to quickly create the files by just building)
+Add Bitmap and Heightmap file outputs. Use PNGs and name according to what it is. (Note: Check off output on every build to create the files by just building)
 
 ![](edit.PNG)
 
@@ -28,7 +28,7 @@ Edit all the output files using GIMP.
 
 ![](cm.PNG)
 
-The standard Colormap will be the base texture that will be built upon.
+The standard Colormap will be the base texture that you work on.
 
 ![](overlayopacity.PNG)
 
