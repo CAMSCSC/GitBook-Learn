@@ -15,7 +15,7 @@ High resolution terrain has long render times. Getting you started can be tricky
 **Mesh** - A 3D object made up of triangles
 
 ## Devices
-There are many nodes used on the Device View called Devices. These devices can create, modify, calculate, and export different things and it is highly suggested that you take some time playing around with each.
+There are many nodes used on the Device View called Devices. These devices can create, modify, calculate, and export different things. It is highly suggested that you take some time playing around with each.
 
 ## Getting Familiar
 ![](wmstartup.PNG)
@@ -38,7 +38,7 @@ A 2D view (useful for texturing) with shading only.
 
 ## Tutorial
 ![](wmgettexture.PNG)
-This setup can be used to show a generated texture and a generated mesh on 3D mockup as well as save both the mesh and texture.
+Use this setup to show a generated texture and a generated mesh on a 3D mockup. It also will save both the mesh and texture.
 
 ![](wmoutputtext.PNG)
 The properties for the output of a bitmap or other image file type.
