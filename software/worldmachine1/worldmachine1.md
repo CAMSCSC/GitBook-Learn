@@ -1,16 +1,16 @@
 # Intro to World Machine
 ## FAQ
 ### What is World Machine?
-You can use World Machine to create terrains for video games, videos, renders, or anything that needs a detailed terrain.
+You can use World Machine to create terrains for video games, videos, or renders.
 ### How can I use World Machine?
 You can use World Machine from start to finish to create your terrain or it can be a middle-man as it has an excellent erosion feature.
 ### How much does it cost?
 The [Basic Edition](http://www.world-machine.com/download.php) is free but limits you to a non-commercial licesnse and a 513x513 terrain size. [Standard Edition](http://www.world-machine.com/download.php?page=buy) starts at $99 and [Professional Edition](http://www.world-machine.com/download.php?page=buy) is $249.
 ### What should I expect from this software?
-It takes a long time to render high resolution terrain and getting started can be tricky, but most elements are included in this lesson.
+High resolution terrain has long render times. Getting you started can be tricky, but most elements are included in this lesson.
 
 ## Vernacular 
-**Heightmap** - A 2D image that uses shades of black and white to indicate depth
+**Heightmap** - A 2D image that uses shades of black and white to show depth
 
 **Mesh** - A 3D object made up of triangles
 
