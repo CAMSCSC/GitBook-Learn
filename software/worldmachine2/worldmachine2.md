@@ -77,3 +77,7 @@ Input the picture in WM and interpret as RGB.
 ![](3dandtexture.PNG)
 
 Hook up the Input to a Overlay View to see what your terrain will look like. 
+
+### Further Readings and References
+
+"World Machine" - [http://www.world-machine.com/](http://www.world-machine.com/)
