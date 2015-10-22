@@ -1,6 +1,9 @@
-#Blender 2
+#Blender 2: Creating a Humanoid
 
-### Creating a Humanoid
+### What is a humanoid?
+A humanoid is a figure that looks like a human or has familiar features of a human
+
+### Modeling the humanoid
 ![](start.PNG "Fig. 1 The Start Screen")
 
 Press '1' then '5'
