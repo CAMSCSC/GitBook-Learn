@@ -5,7 +5,7 @@ We, the members of the California Academy of Mathematics and Science Computer Sc
 
 ### Article I – Name and Location
 
-The California Academy of Mathematics and Science Computer Science and Cyber Security Club (from this point on referred to as CSC), will meet in room 3003 on Thursdays from 11:45 p.m. to 12:30 p.m. The location, date, and time of the meetings can be modified at the sole discretion of the president and the sponsoring teacher. However, the name or the abbreviated name of the club cannot be changed in any manner.
+The California Academy of Mathematics and Science Computer Science and Cyber Security Club (from this point on referred to as CSC), will meet in room 3003 on Thursdays from 11:45 a.m. to 12:30 p.m. The location, date, and time of the meetings can be modified at the sole discretion of the president and the sponsoring teacher. However, the name or the abbreviated name of the club cannot be changed in any manner.
 
 ### Article II – Objective and Purpose
 
